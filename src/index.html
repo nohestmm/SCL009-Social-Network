@@ -10,9 +10,20 @@
 </head>
 <body>
 <div class="container">
-    <input type="password">
-    <button type="submit">Acceso google</button>
+    <input id="email" type="email" placeholder="Ingresa tu email"> 
+    <input id="password" type="password" placeholder="Ingresa tu contraseña">
+    <button id="register" type="submit">Registrar Usuario</button>
 </div>
-    <script type="module" src="/assets/js/auth.js"></script>
+<div class="container2">
+        <input id="email2" type="email" placeholder="Ingresa tu email"> 
+        <input id="password2" type="password" placeholder="Ingresa tu contraseña">
+        <button id="sign-in" type="submit">Inicia sesión</button>
+    </div>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+<script type="module" src="/assets/js/auth.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
