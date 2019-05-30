@@ -1,7 +1,5 @@
- // Initialize Firebase
-  // TODO: Replace with your project's customized code snippet
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
+//Global de firebase
+const firebaseConfig = {
     apiKey: "AIzaSyA7ctYRP7x6WBe_PwZCUnYYe2ahkL7b6l4",
     authDomain: "nomorecommunity-2cfdd.firebaseapp.com",
     databaseURL: "https://nomorecommunity-2cfdd.firebaseio.com",
@@ -13,41 +11,53 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
- 
- 
-  let btnRegister= document.getElementById("register");
+import { registerUser } from './assets/js/auth'
+import { signWithMail } from './assets/js/auth'
+import { logout } from './assets/js/auth'
+
+//let result="";
+
+  /*Btn Register*/
+let btnRegister= document.getElementById("register");
     btnRegister.addEventListener("click", () => {
         let emailOne = document.getElementById("email").value;
         let passwordOne = document.getElementById("password").value;
-        firebase.auth().createUserWithEmailAndPassword(emailOne, passwordOne).catch(function(error) {
+       registerUser(emailOne, passwordOne)
+        /*firebase.auth().createUserWithEmailAndPassword(emailOne, passwordOne).catch(function(error) {
             // Handle Errors here.
             let errorCode = error.code;
             let errorMessage = error.message;
             console.log(errorCode)
             console.log(errorMessage)
            
-          });     
-  })
+          });     */
+         
+        })
+  
 
+  /*Btn Sign In*/
   let btnSignIn= document.getElementById("sign-in");
     btnSignIn.addEventListener("click", () => {
         let emailTwo = document.getElementById("email2").value;
         let passwordTwo = document.getElementById("password2").value;
-        firebase.auth().signInWithEmailAndPassword(emailTwo, passwordTwo).catch(function(error) {
+       signWithMail(emailTwo, passwordTwo);
+        /*firebase.auth().signInWithEmailAndPassword(emailTwo, passwordTwo).catch(function(error) {
             // Handle Errors here.
             let errorCode = error.code;
             let errorMessage = error.message;
             console.log(errorCode)                                                                                                                                                          
             console.log(errorMessage)
             // ...
-          });
-           
-          });     
+          });*/
+         
+          });  
 
+    /*Observador de inicio de sesión*/
 function observer() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            console.log("existe este user")
+         
+            //alert("existe este user")
           // User is signed in.
           let displayName = user.displayName;
           let email = user.email;
@@ -59,9 +69,20 @@ function observer() {
           // ...
         } else {
           // User is signed out.
-          console.log("NO existe este user")
+         //alert("NO existe este user")
         }
       });
 }
 observer();
- 
+
+/*Btn Logout*/
+let btnSignOut = document.getElementById("sign-out");
+btnSignOut.addEventListener("Click", () => {
+    logout();
+  /*firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}).catch(function(error) {
+  // An error happened.
+});*/
+
+})
