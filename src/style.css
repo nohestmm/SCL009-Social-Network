@@ -1,5 +1,44 @@
-button{
-    background-color: pink;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
-}
+
+.first-screen{
+    margin: auto;
+    width: 70%;
+    max-width: 500px;
+    background: rgba(202, 49, 143, 0.74);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: rgba(202, 49, 143, 0.74);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 6%;
+  }
+  .form,.btn-login,#btn-google,#btn-facebook, #register{
+    display:block;
+    padding: 10px;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 20px;
+    border: 0;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-bottom: 0; 
+  }
+  
+ 
+  #btn-google,#btn-facebook, #register, .btn-login{
+    font-size: 15px;
+    background-color:rgba(214, 132, 153, 0.74);
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+  }
+  .form,.btn-login,#btn-google,#btn-facebook:hover{
+    opacity: 1;
+  }
+  .form,.btn-login,#btn-google,#btn-facebook:active{
+    transform: scale(0.95);
+  }
+  .icon{
+    width: 25px;
+    height: 25px;
+  }
