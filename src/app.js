@@ -40,7 +40,7 @@ let btnRegister= document.getElementById("register");
 function observer() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          show()
+         // show()
             console.log("existe este user")
           // User is signed in.
           let displayName = user.displayName;
@@ -61,18 +61,18 @@ function observer() {
 observer();
 
 //Logout
-let btnSignOut = document.getElementById("sign-out");
+/*let btnSignOut = document.getElementById("sign-out");
 btnSignOut.addEventListener("Click", () => {
   firebase.auth().signOut().then(function() {
   // Sign-out successful.
 }).catch(function(error) {
   // An error happened.
 });
-})
+})*/
 
-function show(){
+/*function show(){
   let content= document.getElementById("testing");
   content.innerHTML= "Bienvenido, esto es un test!!!!!"
 }
-
+*/
 ///////////// testing
