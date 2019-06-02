@@ -1,28 +1,37 @@
+**HISTORIA DE USUARIO N°1**
 
-**HISTORIA DE USUARIO N° 1** 
-YO como usuaria de **NoMoreCommunity** QUIERO crear una cuenta en la APP, PARA poder ingresar a la comunidad de manera segura.
+Yo como usuaria de **NoMoreCommunity** QUIERO registrarme en la APP, mediante correo electrónico PARA poder usar la App
 
 **Criterios de aceptación**
-- Permitir al usuario registrarse, mediante el ingreso del alias, nombre y apellido (sólo admin), correo y la contraseña mediante un input  que capture el valor y lo envíe a firebase para guardar el registro.
-- Generar un msj de error si la contraseña es menor a 6 carácteres, espacios en blancos, restricción de caractéres especiales.
-- Generar msj de error si alguno de los campos está vacío.
-- Generar msj error si el alias ya existe.
-- Enviar correo informando la creación de la cuenta en  **NoMoreCommunity**.
-- Permitir al usuario loguearse con Facebook / Google, mediante su respectivo botón de la interfaz.
+- Permitir al usuario registrarse mediante el ingreso de su alias, correo y contraseña, mediante un input  que capture el valor y lo envíe a firebase para guardar el registro. [Listo]
+- Generar un msj de error si la contraseña es menor a 6 carácteres. [listo]
+- Generar msj de error si alguno de los campos está vacío.[listo]
+- Enviar correo al usuario de verificación de cuenta. [listo]
+
+**HISTORIA DE USUARIO N°2**
+Yo como usuaria de **NoMoreCommunity** QUIERO registrarme en la APP, mediante Google PARA poder usar la App
+
+**Criterios de aceptación**
+- Permitir al usuario registrarse con Google, mediante su respectivo botón de la interfaz.
 - Permitir al usuario aceptar ó rechazar los permisos para compartir la información personal de Facebook / Google.
-- Permitir al usuario crearse un alias ó usar los datos exportados de Facebook / Google, y generar msj de error si el alias ya existe.
 
 
-**HISTORIA DE USUARIO N° 2** 
-YO como usuaria registrada en **NoMoreCommunity** QUIERO poder iniciar sesión en la App PARA poder navegar en la misma.
+**HISTORIA DE USUARIO N° 3** 
+YO como usuaria registrada en **NoMoreCommunity** QUIERO poder iniciar sesión mediante correo electrónico y contraseña PARA poder navegar en la misma.
 
 **Criterios de aceptación**
 - Permitir al usuario colocar el correo y contraseña, después validar si existe el usuario al clickear botón de LOGIN.
-- Si el usuario no existe, enviar un alert / modal / innerText que indique que no se encuentra registrado en la App.
+- Si el usuario no existe, enviar un alert que indique que no se encuentra registrado en la App.
 - Si el usuario sí se encuentra registrado, permitir el ingreso mostrando el **muro general**.
-- Si el usuario no recuerda su contraseña, opción de recuperarla mediante envío de correo electrónico.
+- Si el usuario no recuerda su contraseña, enlace con la opción de recuperarla mediante envío de correo electrónico.
 
-**HISTORIA DE USUARIO N° 3** 
+**HISTORIA DE USUARIO N° 4** 
+YO como usuaria registrada en **NoMoreCommunity** QUIERO poder iniciar sesión mediante Google PARA poder navegar en la APP.
+
+**Criterios de aceptación**
+- Permitiar logearme en Google mediante un botón de la interfaz.
+
+**HISTORIA DE USUARIO N° 5** 
 YO como usuaria loggeada de **NoMoreCommunity** QUIERO poder publicar un post, editarlo o eliminarlo, PARA poder compartir con las demás usuarias de la comunidad.
 
 **Criterios de aceptación**

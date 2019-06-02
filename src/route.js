@@ -5,15 +5,15 @@ import { templateProject } from './assets/views/templateProject.js';
 import { templateHome } from './assets/views/templateHome.js';
 
 const changeRoute = (hash) => {
-  if (hash === '#/about' || hash === '#/project' || hash === '#/home' || hash === '' || hash === '#/') {
+  if (hash === '#/about' || hash === '#/project' || hash === '#/home' || hash === '' || hash === '#/' || hash === '/#') {
     return showTemplate(hash)
   }
+  return showTemplate(hash)
 }
 
 // segunda función showTemplate(hash)
 
 const showTemplate = (hash) => {
-  
   // #/about
   const router = hash.substring(2); // home about project
   const containerRoot = document.getElementById('root');
