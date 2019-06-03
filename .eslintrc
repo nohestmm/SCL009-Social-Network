@@ -1,5 +1,6 @@
 {
     "env": {
+<<<<<<< HEAD
       "browser": true,
       "node": true,
       "es6": true
@@ -9,3 +10,14 @@
       "sourceType": "module"
     }
   }
+=======
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    }
+}
+>>>>>>> c9aad88c5ca6b5e0bd30c6c5b3fd01a1c9f0ff2c

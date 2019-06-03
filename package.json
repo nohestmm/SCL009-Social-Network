@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "scl009-social-network",
   "version": "1.0.0",
   "description": "red social de apoyo a mujeres que sufren violencia de genero ",
@@ -43,3 +44,50 @@
     "jest": "^24.8.0"
   }
 }
+=======
+    "name": "nomorecommunity",
+    "version": "0.0.1",
+    "description": "Red Social No More",
+    "main": "src/index.html",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "jest --coverage",
+        "slint": "eslint --ext .js src/ test/",
+        "htmlhint": "htmlhint src/*.html",
+        "pretest": "npm run eslint && npm run htmlhint",
+        "deploy": "gh-pages -d src/"
+
+
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nohestmm/SCL009-Social-Network.git"
+    },
+    "keywords": [
+        "firebase",
+        "community",
+        "npm",
+        "javascript"
+    ],
+    "author": "Beta, Dharma, Nohemi",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nohestmm/SCL009-Social-Network/issues"
+    },
+    "homepage": "https://github.com/nohestmm/SCL009-Social-Network#readme",
+    "dependencies": {
+        "@babel/core": "^7.4.5",
+        "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+        "babel-core": "^6.26.3",
+        "babel-jest": "^24.8.0",
+        "eslint": "^5.16.0",
+        "eslint-plugin-jest": "^22.6.4",
+        "express": "^4.17.1",
+        "gh-pages": "^2.0.1",
+        "htmlhint": "^0.11.0",
+        "jest": "^24.8.0"
+    }
+}
+>>>>>>> c9aad88c5ca6b5e0bd30c6c5b3fd01a1c9f0ff2c

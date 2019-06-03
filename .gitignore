@@ -1,2 +1,6 @@
 node_modules/
+<<<<<<< HEAD
 converage/
+=======
+coverage/
+>>>>>>> c9aad88c5ca6b5e0bd30c6c5b3fd01a1c9f0ff2c
