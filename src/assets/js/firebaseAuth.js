@@ -1,4 +1,7 @@
-//import { firebaseInit } from './firebaseInit' no sirve aquí;
+import { templateProject } from "../views/templateProject.js";
+import { templateEmpty } from "../views/templateEmpty.js";
+
+
 //Todas las funciones de registro e inicio de sesión de firebase
 export const register = (email, password) => firebase.auth().createUserWithEmailAndPassword(email, password)
 .then(function(){
@@ -19,18 +22,24 @@ console.log(errorMessage);
 
 });
 
-export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(mail, pass).catch(function(error) {
-  //observer()
+export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(mail, pass)
+.then(() => { 
+  alert("Bienvenido")
+  templateProject()
+  window.location.hash = '#/project'; })
+.catch(function(error) {
+  templateEmpty()
+ alert("No estás registrado")
+ window.location.hash = '#/empty';
     // Handle Errors here.
     let errorCode = error.code;
     let errorMessage = error.message;
     console.log(errorCode)                                                                                                                                                          
     console.log(errorMessage)
-    if (errorCode == 'auth/user-not-found') { //error si la contraseña es débil
-      alert('No estás registrado.');
-    }
+  
     // ...
   });
+
 
 export const signOut = () => firebase.auth().signOut().then(function() {
     // Sign-out successful.
@@ -40,7 +49,7 @@ export const signOut = () => firebase.auth().signOut().then(function() {
 
 //Observer
 export const observer = () => firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
+        if (user) { window.location.hash = '#/project';
   // User is signed in.
           let displayName = user.displayName;
           let email = user.email;

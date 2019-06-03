@@ -5,7 +5,7 @@ import { templateProject } from './assets/views/templateProject.js';
 import { templateHome } from './assets/views/templateHome.js';
 import { templateEmpty } from './assets/views/templateEmpty.js';
 
-const changeRoute = (hash) => {
+export const changeRoute = (hash) => {
   if (hash === '#/about' || hash === '#/project' || hash === '#/home' || hash === '#/empty'|| hash === '' || hash === '#/' || hash === '/#') {
     return showTemplate(hash)
   }

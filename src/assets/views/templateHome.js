@@ -1,6 +1,5 @@
 import { templateAbout } from './templateAbout.js'; //registro
-import { templateProject } from './templateProject.js'; //muro
-
+ 
 import { login } from '/assets/js/firebaseAuth.js'; // const login
 //import { observer } from '/assets/js/firebaseAuth.js'; // Observador a ver si efectivamente loggea
 
@@ -13,6 +12,7 @@ export const templateHome = () => {
   <input class="form" type="text" id="email2" name="email" placeholder="Ingresa tu correo">
   <input class="form" type="password" id="password2" name="password" placeholder="Ingresa tu contraseña">
   <button class="btn-login" id="sign-in" type="submit">INICIAR SESIÓN</button>
+  <p id="error-message"></p>
   <h3>¿No tienes cuenta?</h3>
 <a id="btn-about" href='#/about'>Regístrate aquí</a>
   <div>
@@ -34,11 +34,12 @@ export const templateHome = () => {
 document.getElementById('sign-in').addEventListener('click', () => {
 let mailValue= document.getElementById('email2').value;
 let passValue= document.getElementById('password2').value;
-login(mailValue, passValue);
+login(mailValue, passValue)
 
-templateProject();
-window.location.hash = '#/project';
 
-})
+//templateProject();
+//window.location.hash = '#/project';
+
+}) 
 
 }

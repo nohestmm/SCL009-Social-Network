@@ -1,3 +1,5 @@
+import { templateAbout } from './templateAbout.js';
+
 export const templateEmpty= () => {
     document.getElementById('root').innerHTML = `
     <div class="first-screen">
