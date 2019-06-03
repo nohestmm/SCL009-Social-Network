@@ -20,11 +20,15 @@ console.log(errorMessage);
 });
 
 export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(mail, pass).catch(function(error) {
+  //observer()
     // Handle Errors here.
     let errorCode = error.code;
     let errorMessage = error.message;
     console.log(errorCode)                                                                                                                                                          
     console.log(errorMessage)
+    if (errorCode == 'auth/user-not-found') { //error si la contraseña es débil
+      alert('No estás registrado.');
+    }
     // ...
   });
 
@@ -35,23 +39,21 @@ export const signOut = () => firebase.auth().signOut().then(function() {
   });
 
 //Observer
-const observer = () => firebase.auth().onAuthStateChanged(function(user) {
+export const observer = () => firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-         // show()
-            console.log("existe este user")
-          // User is signed in.
+  // User is signed in.
           let displayName = user.displayName;
           let email = user.email;
           let emailVerified = user.emailVerified;
-          console.log(emailVerified)
           let photoURL = user.photoURL;
           let isAnonymous = user.isAnonymous;
           let uid = user.uid;
           let providerData = user.providerData;
           // ...
+
         } else {
           // User is signed out.
-          console.log("NO existe este user")
+          
         }
       });
 

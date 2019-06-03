@@ -3,9 +3,10 @@
 import { templateAbout } from './assets/views/templateAbout.js';
 import { templateProject } from './assets/views/templateProject.js';
 import { templateHome } from './assets/views/templateHome.js';
+import { templateEmpty } from './assets/views/templateEmpty.js';
 
 const changeRoute = (hash) => {
-  if (hash === '#/about' || hash === '#/project' || hash === '#/home' || hash === '' || hash === '#/' || hash === '/#') {
+  if (hash === '#/about' || hash === '#/project' || hash === '#/home' || hash === '#/empty'|| hash === '' || hash === '#/' || hash === '/#') {
     return showTemplate(hash)
   }
   return showTemplate(hash)
@@ -29,6 +30,9 @@ const showTemplate = (hash) => {
     case 'home':
       templateHome();
       break;
+    case 'empty':
+    templateEmpty();
+    break;
     case '':
       templateHome();
       break;
