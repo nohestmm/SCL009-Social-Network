@@ -1,6 +1,6 @@
 import { templateProject } from "../views/templateProject.js";
 import { templateHome } from "../views/templateHome.js";
-import { templateAbout } from "../views/templateAbout.js";
+//import { templateAbout } from "../views/templateAbout.js";
 
 
 //Todas las funciones de registro e inicio de sesión de firebase
@@ -15,9 +15,13 @@ export const register = (email, password) => firebase.auth().createUserWithEmail
 // Handle Errors here.
 let errorCode = error.code;
 let errorMessage = error.message;
-if (errorCode == 'auth/weak-password') { //error si la contraseña es débil
+
+templateHome()
+  window.location.hash = '#/home';
+  document.getElementById("error-message").innerHTML= "Registro Exitoso! Inicia sesión";
+/*if (errorCode == 'auth/weak-password') { //error si la contraseña es débil
 templateAbout();
-document.getElementById("password-error").innerHTML= "Contraseña mayor a 6 caracteres";
+document.getElementById("password-error").innerHTML= "Tu contraseña debe ser mayor a 6 carácteres";
 window.location.hash = '#/about';
 
 } else {
@@ -25,7 +29,7 @@ window.location.hash = '#/about';
   window.location.hash = '#/home';
 
 console.log(errorMessage);
-}
+}*/
 //console.log(errorCode);
 
 });
@@ -39,6 +43,7 @@ export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(
   templateHome()
   document.getElementById("error-message").innerHTML= "usuario o contraseña inválida";
  window.location.hash = '#/home';
+
     // Handle Errors here.
     let errorCode = error.code;
     let errorMessage = error.message;
@@ -91,3 +96,14 @@ user.sendEmailVerification().then(function() {
 }
 //export const logGoogle
 //export const logFacebook
+
+export const resetPassword = (email) => {
+  let auth = firebase.auth();
+  let emailAddress = email;
+  
+  auth.sendPasswordResetEmail(emailAddress).then(function() {
+    // Email sent.
+  }).catch(function(error) {
+    // An error happened.
+  });
+}

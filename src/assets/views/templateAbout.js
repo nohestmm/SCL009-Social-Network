@@ -1,5 +1,6 @@
 //import { templateHome } from './templateHome.js'; // muro
 import { register } from '/assets/js/firebaseAuth.js';
+import { validateUser } from '/assets/js/validate.js'; // const validate
 
 export const templateAbout = () => {
   document.getElementById('root').innerHTML = `<div class="first-screen">
@@ -22,9 +23,21 @@ export const templateAbout = () => {
   })*/
    //btn register
    document.getElementById('register-here').addEventListener('click', ()=> {
+    let nameValue= document.getElementById('name').value;
     let emailValue = document.getElementById('email').value;
     let passwordValue = document.getElementById('password').value;
-    register(emailValue, passwordValue);
+    const result = validateUser(nameValue, emailValue, passwordValue);
+if (result !== true) {
+  document.getElementById("password-error").innerHTML = "Completa todos los campos requeridos"; 
+
+  document.getElementById('name').value='';
+  document.getElementById('email').value='';
+  document.getElementById('password').value='';
+
+} else {
+  register(emailValue, passwordValue);
+}
+    
     //templateHome();
     //window.location.hash = '#/home';
      })

@@ -20,9 +20,9 @@ Yo como usuaria de **NoMoreCommunity** QUIERO registrarme en la APP, mediante Go
 YO como usuaria registrada en **NoMoreCommunity** QUIERO poder iniciar sesión mediante correo electrónico y contraseña PARA poder navegar en la misma.
 
 **Criterios de aceptación**
-- Permitir al usuario colocar el correo y contraseña, después validar si existe el usuario al clickear botón de LOGIN.
-- Si el usuario no existe, enviar un alert que indique que no se encuentra registrado en la App.
-- Si el usuario sí se encuentra registrado, permitir el ingreso mostrando el **muro general**.
+- Permitir al usuario colocar el correo y contraseña, después validar si existe el usuario al clickear botón de LOGIN. [listo]
+- Si el usuario no existe, enviar un alert que indique que no se encuentra registrado en la App. [listo]
+- Si el usuario sí se encuentra registrado, permitir el ingreso mostrando el **muro general**.[listo]
 - Si el usuario no recuerda su contraseña, enlace con la opción de recuperarla mediante envío de correo electrónico.
 
 **HISTORIA DE USUARIO N° 4** 
