@@ -1,5 +1,6 @@
 import { templateProject } from "../views/templateProject.js";
-import { templateEmpty } from "../views/templateEmpty.js";
+import { templateHome } from "../views/templateHome.js";
+import { templateAbout } from "../views/templateAbout.js";
 
 
 //Todas las funciones de registro e inicio de sesión de firebase
@@ -7,6 +8,7 @@ export const register = (email, password) => firebase.auth().createUserWithEmail
 .then(function(){
     verifyAccount()
     observer()
+  
     
 })
 .catch(function(error) {
@@ -14,8 +16,14 @@ export const register = (email, password) => firebase.auth().createUserWithEmail
 let errorCode = error.code;
 let errorMessage = error.message;
 if (errorCode == 'auth/weak-password') { //error si la contraseña es débil
-alert('The password is too weak.');
+templateAbout();
+document.getElementById("password-error").innerHTML= "Contraseña mayor a 6 caracteres";
+window.location.hash = '#/about';
+
 } else {
+  templateHome()
+  window.location.hash = '#/home';
+
 console.log(errorMessage);
 }
 //console.log(errorCode);
@@ -24,13 +32,13 @@ console.log(errorMessage);
 
 export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(mail, pass)
 .then(() => { 
-  alert("Bienvenido")
+  document.getElementById("error-message").innerHTML= "usuario registrado ";
   templateProject()
   window.location.hash = '#/project'; })
 .catch(function(error) {
-  templateEmpty()
- alert("No estás registrado")
- window.location.hash = '#/empty';
+  templateHome()
+  document.getElementById("error-message").innerHTML= "usuario o contraseña inválida";
+ window.location.hash = '#/home';
     // Handle Errors here.
     let errorCode = error.code;
     let errorMessage = error.message;
@@ -41,15 +49,19 @@ export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(
   });
 
 
-export const signOut = () => firebase.auth().signOut().then(function() {
+export const signOut = () => firebase.auth().signOut()
+.then(function() {
+  templateHome()
+  document.getElementById("error-message").innerHTML= "Vuelve pronto ÑAÑAÑA";
+ window.location.hash = '#/home';
     // Sign-out successful.
   }).catch(function(error) {
     // An error happened.
   });
 
 //Observer
-export const observer = () => firebase.auth().onAuthStateChanged(function(user) {
-        if (user) { window.location.hash = '#/project';
+const observer = () => firebase.auth().onAuthStateChanged(function(user) {
+        if (user) { 
   // User is signed in.
           let displayName = user.displayName;
           let email = user.email;

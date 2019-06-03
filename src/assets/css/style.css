@@ -6,18 +6,11 @@
 }
 
 body{
-  background: #FBD3E9;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #BB377D, #FBD3E9);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #BB377D, #FBD3E9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  margin: 0;
-  padding: 0;
-}
-
-
-.logo{
-  position: relative;
+  background-image: linear-gradient(to left, #e9a1d3, #d682bb, #c262a2, #af408a, #9b1372);
 
 }
+
+
 .first-screen{
     margin: auto;
     width: 70%;

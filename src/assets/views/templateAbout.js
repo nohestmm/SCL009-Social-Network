@@ -1,4 +1,4 @@
-import { templateHome } from './templateHome.js'; // muro
+//import { templateHome } from './templateHome.js'; // muro
 import { register } from '/assets/js/firebaseAuth.js';
 
 export const templateAbout = () => {
@@ -8,6 +8,7 @@ export const templateAbout = () => {
   <input class="form" type="text" id="name" name="name" placeholder="Alias" required>
   <input class="form" type="text" id="email" name="email" placeholder="Ingresa tu correo" required>
    <input class="form" type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+   <p id = "password-error"></p>
    <button id="register-here" type="submit">Registrar Usuario</button>
   
    <div>
@@ -24,7 +25,7 @@ export const templateAbout = () => {
     let emailValue = document.getElementById('email').value;
     let passwordValue = document.getElementById('password').value;
     register(emailValue, passwordValue);
-    templateHome();
-    window.location.hash = '#/home';
+    //templateHome();
+    //window.location.hash = '#/home';
      })
 }

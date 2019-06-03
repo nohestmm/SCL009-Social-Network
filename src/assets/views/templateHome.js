@@ -9,8 +9,8 @@ export const templateHome = () => {
   <div class="first-screen">
   <div class="container-login">
   <h1>Iniciar sesión</h1>
-  <input class="form" type="text" id="email2" name="email" placeholder="Ingresa tu correo">
-  <input class="form" type="password" id="password2" name="password" placeholder="Ingresa tu contraseña">
+  <input class="form" type="text" id="email2" name="email" placeholder="Ingresa tu correo" required>
+  <input class="form" type="password" id="password2" name="password" placeholder="Ingresa tu contraseña" required>
   <button class="btn-login" id="sign-in" type="submit">INICIAR SESIÓN</button>
   <p id="error-message"></p>
   <h3>¿No tienes cuenta?</h3>
@@ -34,6 +34,7 @@ export const templateHome = () => {
 document.getElementById('sign-in').addEventListener('click', () => {
 let mailValue= document.getElementById('email2').value;
 let passValue= document.getElementById('password2').value;
+console.log(passValue);
 login(mailValue, passValue)
 
 
