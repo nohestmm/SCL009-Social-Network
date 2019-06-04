@@ -23,11 +23,9 @@ templateHome()
 templateAbout();
 document.getElementById("password-error").innerHTML= "Tu contraseña debe ser mayor a 6 carácteres";
 window.location.hash = '#/about';
-
 } else {
   templateHome()
   window.location.hash = '#/home';
-
 console.log(errorMessage);
 }*/
 //console.log(errorCode);
