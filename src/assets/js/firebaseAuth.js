@@ -18,7 +18,7 @@ let errorMessage = error.message;
 
 templateHome()
   window.location.hash = '#/home';
-  document.getElementById("error-message").innerHTML= "Registro Exitoso! Inicia sesión";
+  //document.getElementById("error-message").innerHTML= "Registro Exitoso! Inicia sesión";
 /*if (errorCode == 'auth/weak-password') { //error si la contraseña es débil
 templateAbout();
 document.getElementById("password-error").innerHTML= "Tu contraseña debe ser mayor a 6 carácteres";
@@ -36,12 +36,12 @@ console.log(errorMessage);
 
 export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(mail, pass)
 .then(() => { 
-  document.getElementById("error-message").innerHTML= "usuario registrado ";
+  //document.getElementById("error-message").innerHTML= "usuario registrado ";
   templateProject()
   window.location.hash = '#/project'; })
 .catch(function(error) {
   templateHome()
-  document.getElementById("error-message").innerHTML= "usuario o contraseña inválida";
+  //document.getElementById("error-message").innerHTML= "usuario o contraseña inválida";
  window.location.hash = '#/home';
 
     // Handle Errors here.
@@ -57,7 +57,7 @@ export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(
 export const signOut = () => firebase.auth().signOut()
 .then(function() {
   templateHome()
-  document.getElementById("error-message").innerHTML= "Vuelve pronto ÑAÑAÑA";
+  //document.getElementById("error-message").innerHTML= "Vuelve pronto ÑAÑAÑA";
  window.location.hash = '#/home';
     // Sign-out successful.
   }).catch(function(error) {

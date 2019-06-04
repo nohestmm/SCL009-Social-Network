@@ -25,7 +25,7 @@ body{
     margin-top: 6%;
     font-family: 'El Messiri';
   }
-  .form,.btn-login,#btn-google,#btn-facebook, #register-here{
+  .form,.btn-login,#btn-google,#btn-facebook, #register-here, #btn-back{
     display:block;
     padding: 10px;
     width: 100%;
@@ -38,7 +38,7 @@ body{
   }
   
  
-  #btn-google,#btn-facebook, #register-here, .btn-login{
+  #btn-google,#btn-facebook, #register-here, .btn-login, #btn-back{
     font-size: 15px;
     background-color:rgba(214, 132, 153, 0.74);
     display: flex;
