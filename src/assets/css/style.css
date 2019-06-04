@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=El+Messiri|Roboto+Condensed&display=swap');
-* {
-    margin: 0;
-    padding: 0;
+*{
+  margin: 0;
+  padding: 0;
+
 }
 
-body {
-    background-image: linear-gradient(to left, #e9a1d3, #d682bb, #c262a2, #af408a, #9b1372);
+body{
+  background-image: linear-gradient(to left, #e9a1d3, #d682bb, #c262a2, #af408a, #9b1372);
+
 }
 
-.first-screen {
+
+.first-screen{
     margin: auto;
     width: 70%;
     max-width: 500px;
@@ -21,14 +24,9 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.2);
     margin-top: 6%;
     font-family: 'El Messiri';
-}
-
-.form,
-.btn-login,
-#btn-google,
-#btn-facebook,
-#register-here {
-    display: block;
+  }
+  .form,.btn-login,#btn-google,#btn-facebook, #register-here, #btn-back{
+    display:block;
     padding: 10px;
     width: 100%;
     margin: 15px 0;
@@ -36,42 +34,30 @@ body {
     border: 0;
     cursor: pointer;
     border-radius: 15px;
-    margin-bottom: 0;
-}
-
-#btn-google,
-#btn-facebook,
-#register-here,
-.btn-login {
+    margin-bottom: 0; 
+  }
+  
+ 
+  #btn-google,#btn-facebook, #register-here, .btn-login, #btn-back{
     font-size: 15px;
-    background-color: rgba(214, 132, 153, 0.74);
+    background-color:rgba(214, 132, 153, 0.74);
     display: flex;
     flex-direction: row;
-    justify-content: center;
-}
-
-.form,
-.btn-login,
-#btn-google,
-#btn-facebook:hover {
+    justify-content:center;
+  }
+  .form,.btn-login,#btn-google,#btn-facebook:hover{
     opacity: 1;
-}
-
-.form,
-.btn-login,
-#btn-google,
-#btn-facebook:active {
+  }
+  .form,.btn-login,#btn-google,#btn-facebook:active{
     transform: scale(0.95);
-}
-
-.icon {
+  }
+  .icon{
     width: 25px;
     height: 25px;
-}
+  }
 
-h3,
-#btn-about {
-    float: left;
-    margin-left: 3.5rem;
-    justify-content: center;
+h3, #btn-about{
+  float: left;
+  margin-left:3.5rem;
+  justify-content: center;
 }

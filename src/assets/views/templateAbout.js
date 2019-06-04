@@ -1,5 +1,6 @@
-//import { templateHome } from './templateHome.js'; // muro
+import { templateHome } from './templateHome.js'; // login
 import { register } from '/assets/js/firebaseAuth.js';
+import { validateUser } from '/assets/js/validate/validateRegister.js'; // const validate
 
 export const templateAbout = () => {
   document.getElementById('root').innerHTML = `<div class="first-screen">
@@ -9,6 +10,7 @@ export const templateAbout = () => {
    <input class="form" type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
    <p id = "password-error"></p>
    <button id="register-here" type="submit">Registrar Usuario</button>
+   <button id ="btn-back"> Regresar</button>
   
    <div>
                                               `
@@ -21,10 +23,26 @@ export const templateAbout = () => {
   })*/
    //btn register
    document.getElementById('register-here').addEventListener('click', ()=> {
+    let nameValue= document.getElementById('name').value;
     let emailValue = document.getElementById('email').value;
     let passwordValue = document.getElementById('password').value;
-    register(emailValue, passwordValue);
+    
+if (validateUser(nameValue, emailValue, passwordValue)) {
+  document.getElementById("password-error").innerHTML = "Completa todos los campos requeridos"; 
+
+  document.getElementById('name').value='';
+  document.getElementById('email').value='';
+  document.getElementById('password').value='';
+
+} else {
+  register(emailValue, passwordValue);
+}
+    
     //templateHome();
     //window.location.hash = '#/home';
      })
+  document.getElementById('btn-back').addEventListener('click',()=>{
+  templateHome();
+  window.location.hash = '#/home';
+  })
 }

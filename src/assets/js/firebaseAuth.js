@@ -1,6 +1,6 @@
 import { templateProject } from "../views/templateProject.js";
 import { templateHome } from "../views/templateHome.js";
-import { templateAbout } from "../views/templateAbout.js";
+//import { templateAbout } from "../views/templateAbout.js";
 
 
 //Todas las funciones de registro e inicio de sesión de firebase
@@ -15,30 +15,34 @@ export const register = (email, password) => firebase.auth().createUserWithEmail
 // Handle Errors here.
 let errorCode = error.code;
 let errorMessage = error.message;
-if (errorCode == 'auth/weak-password') { //error si la contraseña es débil
-templateAbout();
-document.getElementById("password-error").innerHTML= "Contraseña mayor a 6 caracteres";
-window.location.hash = '#/about';
 
+templateHome()
+  window.location.hash = '#/home';
+  //document.getElementById("error-message").innerHTML= "Registro Exitoso! Inicia sesión";
+/*if (errorCode == 'auth/weak-password') { //error si la contraseña es débil
+templateAbout();
+document.getElementById("password-error").innerHTML= "Tu contraseña debe ser mayor a 6 carácteres";
+window.location.hash = '#/about';
 } else {
   templateHome()
   window.location.hash = '#/home';
-
 console.log(errorMessage);
-}
+}*/
 //console.log(errorCode);
 
 });
 
 export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(mail, pass)
 .then(() => { 
-  document.getElementById("error-message").innerHTML= "usuario registrado ";
+  observer();
+  //document.getElementById("error-message").innerHTML= "usuario registrado ";
   templateProject()
   window.location.hash = '#/project'; })
 .catch(function(error) {
   templateHome()
-  document.getElementById("error-message").innerHTML= "usuario o contraseña inválida";
+  //document.getElementById("error-message").innerHTML= "usuario o contraseña inválida";
  window.location.hash = '#/home';
+
     // Handle Errors here.
     let errorCode = error.code;
     let errorMessage = error.message;
@@ -52,7 +56,7 @@ export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(
 export const signOut = () => firebase.auth().signOut()
 .then(function() {
   templateHome()
-  document.getElementById("error-message").innerHTML= "Vuelve pronto ÑAÑAÑA";
+  //document.getElementById("error-message").innerHTML= "Vuelve pronto ÑAÑAÑA";
  window.location.hash = '#/home';
     // Sign-out successful.
   }).catch(function(error) {
@@ -60,23 +64,29 @@ export const signOut = () => firebase.auth().signOut()
   });
 
 //Observer
-const observer = () => firebase.auth().onAuthStateChanged(function(user) {
-        if (user) { 
-  // User is signed in.
-          let displayName = user.displayName;
-          let email = user.email;
-          let emailVerified = user.emailVerified;
-          let photoURL = user.photoURL;
-          let isAnonymous = user.isAnonymous;
-          let uid = user.uid;
-          let providerData = user.providerData;
-          // ...
+export const observer = () => {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) { 
+// User is signed in.
+      let displayName = user.displayName;
+      let email = user.email;
+      let emailVerified = user.emailVerified;
+      let photoURL = user.photoURL;
+      let isAnonymous = user.isAnonymous;
+      let uid = user.uid;
+      let providerData = user.providerData;
+      // ...
 
-        } else {
-          // User is signed out.
-          
-        }
-      });
+    } else {
+      // User is signed out.
+      templateHome()
+      window.location.hash = '#/home';
+      
+    }
+  });
+
+} 
+
 
 const verifyAccount = () => { //envía correo de verificación al user, funcionando OK
 let user= firebase.auth().currentUser;
@@ -91,3 +101,14 @@ user.sendEmailVerification().then(function() {
 }
 //export const logGoogle
 //export const logFacebook
+
+export const resetPassword = (email) => {
+  let auth = firebase.auth();
+  let emailAddress = email;
+  
+  auth.sendPasswordResetEmail(emailAddress).then(function() {
+    // Email sent.
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
