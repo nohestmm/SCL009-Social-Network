@@ -7,7 +7,7 @@ Yo como usuaria de **NoMoreCommunity** QUIERO registrarme en la APP, mediante co
 - Generar un msj de error si la contraseña es menor a 6 carácteres. [listo]
 - Generar msj de error si alguno de los campos está vacío.[listo]
 - Enviar correo al usuario de verificación de cuenta. [listo]
-- Permitir que SÓLO ingresen a través del hash, los usuarios registrados.
+- Permitir que SÓLO ingresen a través del hash, los usuarios registrados. [listo]
 
 **HISTORIA DE USUARIO N°2**
 Yo como usuaria de **NoMoreCommunity** QUIERO poder restablecer mi contraseña, para usar la APP si la olvidé.
@@ -44,4 +44,4 @@ YO como usuaria loggeada de **NoMoreCommunity** QUIERO poder publicar un post, e
 **HISTORIA DE USUARIO N° 6**
 Yo como usuario loggeado de NoMoreCommunity, QUIERO poder cerrar sesión de mi cuenta PARA poder salir de la APP.
 **Criterios de aceptación**
-- Botón que cierre sesión y muestre la pantalla principal, con mensaje de despedida.
+- Botón que cierre sesión y muestre la pantalla principal, con mensaje de despedida. [listo]

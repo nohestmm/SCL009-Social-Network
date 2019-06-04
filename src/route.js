@@ -1,5 +1,5 @@
 //import todas las vistas
-
+import { observer } from './assets/js/firebaseAuth.js';
 import { templateAbout } from './assets/views/templateAbout.js';
 import { templateProject } from './assets/views/templateProject.js';
 import { templateHome } from './assets/views/templateHome.js';
@@ -45,6 +45,9 @@ export const initRouter = () => {
   window.addEventListener('load', changeRoute(window.location.hash));
 
   if ('onhashchange' in window) {
+    window.onhashchange = () => {
+      observer();
     changeRoute(window.location.hash);
   }
+}
 }

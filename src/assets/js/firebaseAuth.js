@@ -36,6 +36,7 @@ console.log(errorMessage);
 
 export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(mail, pass)
 .then(() => { 
+  observer();
   //document.getElementById("error-message").innerHTML= "usuario registrado ";
   templateProject()
   window.location.hash = '#/project'; })
@@ -65,23 +66,29 @@ export const signOut = () => firebase.auth().signOut()
   });
 
 //Observer
-const observer = () => firebase.auth().onAuthStateChanged(function(user) {
-        if (user) { 
-  // User is signed in.
-          let displayName = user.displayName;
-          let email = user.email;
-          let emailVerified = user.emailVerified;
-          let photoURL = user.photoURL;
-          let isAnonymous = user.isAnonymous;
-          let uid = user.uid;
-          let providerData = user.providerData;
-          // ...
+export const observer = () => {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) { 
+// User is signed in.
+      let displayName = user.displayName;
+      let email = user.email;
+      let emailVerified = user.emailVerified;
+      let photoURL = user.photoURL;
+      let isAnonymous = user.isAnonymous;
+      let uid = user.uid;
+      let providerData = user.providerData;
+      // ...
 
-        } else {
-          // User is signed out.
-          
-        }
-      });
+    } else {
+      // User is signed out.
+      templateHome()
+      window.location.hash = '#/home';
+      
+    }
+  });
+
+} 
+
 
 const verifyAccount = () => { //envía correo de verificación al user, funcionando OK
 let user= firebase.auth().currentUser;
