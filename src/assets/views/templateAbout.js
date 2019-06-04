@@ -5,7 +5,6 @@ import { validateUser } from '/assets/js/validate/validateRegister.js'; // const
 export const templateAbout = () => {
   document.getElementById('root').innerHTML = `<div class="first-screen">
   <h1>¡Crea tu cuenta ahora!</h1>
-
   <input class="form" type="text" id="name" name="name" placeholder="Alias" required>
   <input class="form" type="text" id="email" name="email" placeholder="Ingresa tu correo" required>
    <input class="form" type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>

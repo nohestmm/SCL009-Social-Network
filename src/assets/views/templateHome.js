@@ -23,7 +23,6 @@ export const templateHome = () => {
 <h3>¿Olvidaste tu contraseña?</h3>
 <a id="btn-reset" href='#/empty'>Pincha aquí</a>
   <div>
-
 <div class="icons">
   <button id="btn-google"  ><img class = "icon" src='google.ico' alt="google">Inicia sesión con Google</button>
   <button id="btn-facebook"><img class = "icon" src='facebook.ico' alt="facebook">Inicia sesión con Facebook</button>
