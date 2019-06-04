@@ -24,8 +24,8 @@ export const templateHome = () => {
 <a id="btn-reset" href='#/empty'>Pincha aquí</a>
   <div>
 <div class="icons">
-  <button id="btn-google"  ><img class = "icon" src='google.ico' alt="google">Inicia sesión con Google</button>
-  <button id="btn-facebook"><img class = "icon" src='facebook.ico' alt="facebook">Inicia sesión con Facebook</button>
+  <button id="btn-google"  ><img class = "icon" src='./assets/img/google.ico' alt="google">Inicia sesión con Google</button>
+  <button id="btn-facebook"><img class = "icon" src='./assets/img/facebook.ico' alt="facebook">Inicia sesión con Facebook</button>
  
 </div>
    
@@ -61,7 +61,6 @@ window.location.hash = '#/forgotpassword';
 
 //templateProject();
 //window.location.hash = '#/project';
-
 
 
 }

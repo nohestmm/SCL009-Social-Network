@@ -6,8 +6,8 @@ import { templateHome } from "../views/templateHome.js";
 //Todas las funciones de registro e inicio de sesión de firebase
 export const register = (email, password) => firebase.auth().createUserWithEmailAndPassword(email, password)
 .then(function(){
-    verifyAccount()
-    observer()
+    verifyAccount();
+    observer();
   
     
 })

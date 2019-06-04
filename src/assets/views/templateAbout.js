@@ -8,7 +8,7 @@ export const templateAbout = () => {
   <input class="form" type="text" id="name" name="name" placeholder="Alias" required>
   <input class="form" type="text" id="email" name="email" placeholder="Ingresa tu correo" required>
    <input class="form" type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
-   <p id = "password-error"></p>
+   <p id ="password-error"></p>
    <button id="register-here" type="submit">Registrar Usuario</button>
    <button id ="btn-back"> Regresar</button>
   
