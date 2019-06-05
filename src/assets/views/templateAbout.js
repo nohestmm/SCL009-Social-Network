@@ -2,6 +2,10 @@ import { templateHome } from './templateHome.js'; // login
 import { register } from '/assets/js/firebaseAuth.js';
 import { validateUser } from '/assets/js/validate/validateRegister.js'; // const validate
 
+
+
+//event =0;
+
 export const templateAbout = () => {
   document.getElementById('root').innerHTML = `<div class="first-screen">
   <h1>¡Crea tu cuenta ahora!</h1>
@@ -15,13 +19,8 @@ export const templateAbout = () => {
    <div>
                                               `
 
-  /*document.getElementById('btn-project').addEventListener('click', () => {
-    // llamar a la función que carga el template project
-    // cambiar el hash a #/project
-    templateProject();
-    window.location.hash = '#/project';
-  })*/
-   //btn register
+
+   
    document.getElementById('register-here').addEventListener('click', ()=> {
     let nameValue= document.getElementById('name').value;
     let emailValue = document.getElementById('email').value;
@@ -37,10 +36,13 @@ if (validateUser(nameValue, emailValue, passwordValue)) {
 } else {
   register(emailValue, passwordValue);
 }
-     })
-     // btn regresar
+    
+    //templateHome();
+    //window.location.hash = '#/home';
+     });
   document.getElementById('btn-back').addEventListener('click',()=>{
-  templateHome();
-  window.location.hash = '#/home';
-  })
+    templateHome();
+    window.location.hash = '#/home';
+
+  });
 }

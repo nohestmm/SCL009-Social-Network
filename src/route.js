@@ -1,9 +1,11 @@
 //import todas las vistas
-//import { observer } from './assets/js/firebaseAuth.js';
+import { observer } from './assets/js/firebaseAuth.js';
 import { templateAbout } from './assets/views/templateAbout.js';
 import { templateProject } from './assets/views/templateProject.js';
 import { templateHome } from './assets/views/templateHome.js';
 import { templateForgotPassword } from './assets/views/templateForgotPassword.js';
+
+
 
 export const changeRoute = (hash) => {
   if (hash === '#/about' || hash === '#/project' || hash === '#/home' || hash === '#/forgotpassword'|| hash === '' || hash === '#/' || hash === '/#') {
@@ -27,8 +29,8 @@ const showTemplate = (hash) => {
     case 'project':
       templateProject();
       break;
-    case 'home': 
-    templateHome();
+    case 'home':
+      templateHome();
       break;
     case 'forgotpassword':
       templateForgotPassword();
@@ -46,8 +48,10 @@ export const initRouter = () => {
 
   if ('onhashchange' in window) {
     window.onhashchange = () => {
-     //observer();
+      observer();
     changeRoute(window.location.hash);
+    
   }
 }
+
 }
