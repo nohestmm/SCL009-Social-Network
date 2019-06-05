@@ -1,4 +1,5 @@
 import { initRouter } from './route.js';
+//import { observer } from '/assets/js/firebaseAuth.js'; // Observador a ver si efectivamente loggea
 
 const firebaseInit = () => {
   // Initialize Firebase
@@ -18,6 +19,7 @@ const firebaseInit = () => {
 const init = () => {
   firebaseInit();
   initRouter();
+  //observer();
 }
 
 window.addEventListener('load', init);

@@ -37,10 +37,8 @@ if (validateUser(nameValue, emailValue, passwordValue)) {
 } else {
   register(emailValue, passwordValue);
 }
-    
-    //templateHome();
-    //window.location.hash = '#/home';
      })
+     // btn regresar
   document.getElementById('btn-back').addEventListener('click',()=>{
   templateHome();
   window.location.hash = '#/home';
