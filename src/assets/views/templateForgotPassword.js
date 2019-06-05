@@ -1,4 +1,4 @@
-import { templateHome } from './templateHome.js';
+import { templateHome } from './templateHome.js';//llamo a la funcion template home
 import { resetPassword } from '/assets/js/firebaseAuth.js'; // const reset password
 import { validateForgotPassword } from '/assets/js/validate/validateForgotPassword.js';
 

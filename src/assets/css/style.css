@@ -3,9 +3,11 @@
   margin: 0;
   padding: 0;
 }
+
 body{
   background-image: linear-gradient(to left, #e9a1d3, #d682bb, #c262a2, #af408a, #9b1372);
 }
+
 .first-screen{
     margin: auto;
     width: 70%;

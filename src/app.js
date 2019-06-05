@@ -15,9 +15,9 @@ const firebaseInit = () => {
   firebase.initializeApp(firebaseConfig);
 }
 
-const init = () => {
+const init = () => {//llamado de la funcion firebaseinit(configuracion ) y init router que son los cambios de ruta
   firebaseInit();
   initRouter();
 }
 
-window.addEventListener('load', init);
+window.addEventListener('load', init);//escucha a window
