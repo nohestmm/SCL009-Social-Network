@@ -1,6 +1,9 @@
 import { templateProject } from "../views/templateProject.js";
 import { templateHome } from "../views/templateHome.js";
-//import { templateAbout } from "../views/templateAbout.js";
+import { event } from "../views/templateHome.js";
+import { templateAbout } from "../views/templateAbout.js";
+
+//import { templateForgotPassword } from "../views/templateForgotPassword.js";
 
 
 //Todas las funciones de registro e inicio de sesión de firebase
@@ -16,46 +19,38 @@ export const register = (email, password) => firebase.auth().createUserWithEmail
 let errorCode = error.code;
 let errorMessage = error.message;
 
-templateHome()
+templateHome();
   window.location.hash = '#/home';
-  //document.getElementById("error-message").innerHTML= "Registro Exitoso! Inicia sesión";
-/*if (errorCode == 'auth/weak-password') { //error si la contraseña es débil
-templateAbout();
-document.getElementById("password-error").innerHTML= "Tu contraseña debe ser mayor a 6 carácteres";
-window.location.hash = '#/about';
-} else {
-  templateHome()
-  window.location.hash = '#/home';
-console.log(errorMessage);
-}*/
-//console.log(errorCode);
 
 });
 
-export const login = (mail, pass) => firebase.auth().signInWithEmailAndPassword(mail, pass)
+export const login = (mail, pass) => {firebase.auth().signInWithEmailAndPassword(mail, pass)
 .then(() => { 
   observer();
   //document.getElementById("error-message").innerHTML= "usuario registrado ";
   templateProject()
   window.location.hash = '#/project'; })
 .catch(function(error) {
-  templateHome()
+  templateHome();
+ 
   //document.getElementById("error-message").innerHTML= "usuario o contraseña inválida";
  window.location.hash = '#/home';
 
     // Handle Errors here.
     let errorCode = error.code;
     let errorMessage = error.message;
+   // errorLogin();
+    
     console.log(errorCode)                                                                                                                                                          
     console.log(errorMessage)
   
-    // ...
+   
   });
+}
 
-
-export const signOut = () => firebase.auth().signOut()
+export const signOut = () => {firebase.auth().signOut()
 .then(function() {
-  templateHome()
+  templateHome();
   //document.getElementById("error-message").innerHTML= "Vuelve pronto ÑAÑAÑA";
  window.location.hash = '#/home';
     // Sign-out successful.
@@ -63,9 +58,13 @@ export const signOut = () => firebase.auth().signOut()
     // An error happened.
   });
 
+}
+
 //Observer
 export const observer = () => {
+
   firebase.auth().onAuthStateChanged(function(user) {
+
     if (user) { 
 // User is signed in.
       let displayName = user.displayName;
@@ -77,15 +76,25 @@ export const observer = () => {
       let providerData = user.providerData;
       // ...
 
-    } else {
-      // User is signed out.
-      templateHome()
-      window.location.hash = '#/home';
-      
-    }
-  });
+    } 
+ 
+    
+   else{
+// User is signed out.
+window.location.hash = '#/home';
 
-} 
+}
+
+
+    
+      
+     
+   
+      
+  });
+}
+
+
 
 
 const verifyAccount = () => { //envía correo de verificación al user, funcionando OK
@@ -107,8 +116,10 @@ export const resetPassword = (email) => {
   let emailAddress = email;
   
   auth.sendPasswordResetEmail(emailAddress).then(function() {
-    // Email sent.
+    
+
+
   }).catch(function(error) {
-    // An error happened.
+
   });
 }

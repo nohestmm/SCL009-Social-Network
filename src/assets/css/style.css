@@ -28,7 +28,11 @@ body {
 #btn-google,
 #btn-facebook,
 #register-here,
-#btn-back {
+#btn-back,
+#btn-send,
+#btn-back-password,
+#btn-about,
+#btn-reset {
     display: block;
     padding: 10px;
     width: 100%;
@@ -44,7 +48,12 @@ body {
 #btn-facebook,
 #register-here,
 .btn-login,
-#btn-back {
+#btn-back,
+#btn-about,
+#btn-back,
+#btn-send,
+#btn-back-password,
+#btn-reset {
     font-size: 15px;
     background-color: rgba(214, 132, 153, 0.74);
     display: flex;

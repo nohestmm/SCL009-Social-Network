@@ -1,6 +1,6 @@
 import { templateHome } from './templateHome.js';
 import { signOut } from '/assets/js/firebaseAuth.js';
-import { googleLogIn } from '/assets/js/firebaseAuth.js';
+
 
 export const templateProject = () => {
   document.getElementById('root').innerHTML = `<p>Template Project</p>

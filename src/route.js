@@ -5,6 +5,8 @@ import { templateProject } from './assets/views/templateProject.js';
 import { templateHome } from './assets/views/templateHome.js';
 import { templateForgotPassword } from './assets/views/templateForgotPassword.js';
 
+
+
 export const changeRoute = (hash) => {
   if (hash === '#/about' || hash === '#/project' || hash === '#/home' || hash === '#/forgotpassword'|| hash === '' || hash === '#/' || hash === '/#') {
     return showTemplate(hash)
@@ -48,6 +50,8 @@ export const initRouter = () => {
     window.onhashchange = () => {
       observer();
     changeRoute(window.location.hash);
+    
   }
 }
+
 }

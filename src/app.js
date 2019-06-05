@@ -1,4 +1,5 @@
 import { initRouter } from './route.js';
+import { observer } from './assets/js/firebaseAuth.js';
 
 const firebaseInit = () => {
   // Initialize Firebase
@@ -16,8 +17,13 @@ const firebaseInit = () => {
 }
 
 const init = () => {
+ 
   firebaseInit();
   initRouter();
 }
 
 window.addEventListener('load', init);
+
+
+
+

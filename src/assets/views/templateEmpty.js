@@ -6,7 +6,7 @@ export const templateEmpty= () => {
     <div class="container-login">
     <h1>Oops! No estás registrada :)</h1>
     <p>No te preocupes amiga, puedes hacerlo aquí!<p>
-  <a id="btn-about" href='#/about'>Regístrate aquí</a>
+  <a id="btn-about" >Regístrate aquí</a>
     <div>
      <div>
                                                 `
