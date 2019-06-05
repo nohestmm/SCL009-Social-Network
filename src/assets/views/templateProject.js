@@ -1,7 +1,10 @@
 import { templateHome } from './templateHome.js';
 import { signOut } from '/assets/js/firebaseAuth.js';
+import { observer } from '../js/firebaseAuth.js';
+
 
 export const templateProject = () => {
+  observer();
   document.getElementById('root').innerHTML = `<p>Template Project</p>
   
                                               <button id="btn-home">Ir a Home</button>

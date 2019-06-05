@@ -4,7 +4,9 @@ import { templateAbout } from './assets/views/templateAbout.js';
 import { templateProject } from './assets/views/templateProject.js';
 import { templateHome } from './assets/views/templateHome.js';
 import { templateForgotPassword } from './assets/views/templateForgotPassword.js';
-/*en changueRoute se da la condicion que si se pone alguna hash o esta vacio suceda la segunda funcion */
+
+
+
 export const changeRoute = (hash) => {
   if (hash === '#/about' || hash === '#/project' || hash === '#/home' || hash === '#/forgotpassword'|| hash === '' || hash === '#/' || hash === '/#') {
     return showTemplate(hash)
@@ -44,10 +46,11 @@ const showTemplate = (hash) => {//se le
 export const initRouter = () => {
   window.addEventListener('load', changeRoute(window.location.hash));
 
-  if ('onhashchange' in window) {//este esvento se declara cuando cambia el usuario directo del ancla
+  if ('onhashchange' in window) {
     window.onhashchange = () => {
-      observer();//llamo al ovserva
+      //observer();
     changeRoute(window.location.hash);
+    
   }
 }
 }

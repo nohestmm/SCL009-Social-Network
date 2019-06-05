@@ -1,4 +1,5 @@
 import { initRouter } from './route.js';
+import { observer } from './assets/js/firebaseAuth.js';
 
 const firebaseInit = () => {
   // Initialize Firebase
@@ -15,9 +16,16 @@ const firebaseInit = () => {
   firebase.initializeApp(firebaseConfig);
 }
 
-const init = () => {//llamado de la funcion firebaseinit(configuracion ) y init router que son los cambios de ruta
+const init = () => {
+ 
   firebaseInit();
+  //observer();
   initRouter();
+  
 }
 
-window.addEventListener('load', init);//escucha a window
+window.addEventListener('load', init);
+
+
+
+

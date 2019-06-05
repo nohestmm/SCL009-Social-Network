@@ -1,13 +1,20 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "name": "scl009-social-network",
   "version": "1.0.0",
   "description": "red social de apoyo a mujeres que sufren violencia de genero ",
+=======
+  "name": "nomorecommunity",
+  "version": "0.0.1",
+  "description": "red social NoMoreCommunity",
+>>>>>>> f311bdcbc317a9059ada149f0aa51b919e60012e
   "main": "src/index.html",
   "directories": {
     "test": "test"
   },
   "scripts": {
+<<<<<<< HEAD
    "test": "jest --converage",
    "eslint": "eslint --ext .js src/ test/",
    "htmlhint": "htmlhint src/*.html",
@@ -31,6 +38,30 @@
     "url": "https://github.com/dhaarmaa/SCL009-Social-Network/issues"
   },
   "homepage": "https://github.com/dhaarmaa/SCL009-Social-Network#readme",
+=======
+    "test": "jest --coverage", 
+    "eslint": "eslint --ext .js src/ test/",
+    "htmlhint": "htmlhint src/*.html",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "deploy": "gh-pages -d src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betanyeli/SCL009-Social-Network.git"
+  },
+  "keywords": [
+    "firebase",
+    "javascript",
+    "social",
+    "network"
+  ],
+  "author": "Beta, Nohe, Dharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/betanyeli/SCL009-Social-Network/issues"
+  },
+  "homepage": "https://github.com/betanyeli/SCL009-Social-Network#readme",
+>>>>>>> f311bdcbc317a9059ada149f0aa51b919e60012e
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-transform-modules-commonjs": "^7.4.4",
@@ -43,6 +74,7 @@
     "htmlhint": "^0.11.0",
     "jest": "^24.8.0"
   }
+<<<<<<< HEAD
 }
 =======
     "name": "nomorecommunity",
@@ -91,3 +123,6 @@
     }
 }
 >>>>>>> c9aad88c5ca6b5e0bd30c6c5b3fd01a1c9f0ff2c
+=======
+}
+>>>>>>> f311bdcbc317a9059ada149f0aa51b919e60012e
