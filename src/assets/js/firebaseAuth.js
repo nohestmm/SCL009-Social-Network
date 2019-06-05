@@ -28,13 +28,14 @@ export const login = (mail, pass) => {firebase.auth().signInWithEmailAndPassword
 .then(() => { 
   observer();
   //document.getElementById("error-message").innerHTML= "usuario registrado ";
-  templateProject()
-  window.location.hash = '#/project'; })
+//templateProject()
+  window.location.hash = '#/project'; 
+})
 .catch(function(error) {
-  templateHome();
+  //templateHome();
  
   //document.getElementById("error-message").innerHTML= "usuario o contraseña inválida";
- window.location.hash = '#/home';
+ //window.location.hash = '#/home';
 
     // Handle Errors here.
     let errorCode = error.code;
@@ -81,7 +82,8 @@ export const observer = () => {
     
    else{
 // User is signed out.
-window.location.hash = '#/home';
+window.location.hash="";
+templateHome();
 
 }
 

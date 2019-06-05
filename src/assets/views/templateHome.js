@@ -59,7 +59,8 @@ document.getElementById('password2').value='';
 } else {
 
   login(mailValue, passValue);
-
+  
+  document.getElementById('error-message').innerHTML="inválido";
  
  
 }

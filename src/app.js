@@ -19,7 +19,9 @@ const firebaseInit = () => {
 const init = () => {
  
   firebaseInit();
+  //observer();
   initRouter();
+  
 }
 
 window.addEventListener('load', init);
