@@ -79,10 +79,21 @@ document.getElementById('btn-reset').addEventListener('click', () => {
  
 });
 
-//templateProject();
-//window.location.hash = '#/project';
+
+}
+
+export const userInvalid =(errorCode) =>{
 
 
+  if (errorCode === 'auth/wrong-password'){
+  document.getElementById('error-message').innerHTML = "Contraseña inválida! ¡vuelve a intentar!";
 
+  }
+
+  if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found'){
+    document.getElementById('error-message').innerHTML = "Usuario no registrado";
+
+  }
+  
 }
 
