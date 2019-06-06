@@ -37,7 +37,7 @@ export const login = (mail, pass) => {firebase.auth().signInWithEmailAndPassword
    let errorCode = error.code;
     let errorMessage = error.message;
     templateHome();
-window.location.hash = '#/home';
+
     userInvalid(errorCode);
    // errorLogin();
    /*if (errorCode === 'auth/wrong-password') {
