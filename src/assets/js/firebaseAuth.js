@@ -1,5 +1,6 @@
 //import { templateProject } from "../views/templateProject.js";
 import { templateHome } from "../views/templateHome.js";
+import { userInvalid } from "../views/templateHome.js";
 //import { event } from "../views/templateHome.js";
 //import { templateAbout } from "../views/templateAbout.js";
 
@@ -19,8 +20,8 @@ export const register = (email, password) => firebase.auth().createUserWithEmail
 let errorCode = error.code;
 let errorMessage = error.message;
 
-templateHome();
-  window.location.hash = '#/home';
+// templateHome();
+// window.location.hash = '#/home';
 
 });
 
@@ -35,19 +36,23 @@ export const login = (mail, pass) => {firebase.auth().signInWithEmailAndPassword
     // Handle Errors here.
    let errorCode = error.code;
     let errorMessage = error.message;
+    templateHome();
+
+    userInvalid(errorCode);
    // errorLogin();
    /*if (errorCode === 'auth/wrong-password') {
     document.getElementById('error-message').innerHTML="Contraseña inválida";
    } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
      document.getElementById('error-message').innerHTML="Usuario no registrado";
    }*/
-   if (errorCode === 'auth/wrong-password') {
-    alert("Contraseña inválida! ¡vuelve a intentar!")
-   } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
-     alert("Usuario no registrado")
-   }
-    console.log(errorCode)                                                                                                                                                          
-    console.log(errorMessage)
+  //  if (errorCode === 'auth/wrong-password') {
+
+  //   alert("Contraseña inválida! ¡vuelve a intentar!")
+  //  } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
+  //    alert("Usuario no registrado")
+  //  }
+  //   console.log(errorCode)                                                                                                                                                          
+  //   console.log(errorMessage)
   
    
   });
@@ -81,15 +86,10 @@ export const observer = () => {
    else{
 // User is signed out.
 window.location.hash="";
-templateHome();
+
 
 }
-
-
-    
-      
-     
-   
+  
       
   });
 }
