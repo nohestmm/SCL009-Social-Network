@@ -48,7 +48,7 @@ export const initRouter = () => {
 
   if ('onhashchange' in window) {
     window.onhashchange = () => {
-      observer();
+      //observer();
     changeRoute(window.location.hash);
     
   }

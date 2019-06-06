@@ -36,6 +36,10 @@ document.getElementById('btn-send').addEventListener('click', () => {
   
   } else {
   resetPassword(email); 
+alert("Correo enviado exitosamente");
+  templateHome();
+window.location.hash = '#/home';
+   
  
   }
   });
