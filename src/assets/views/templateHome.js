@@ -4,6 +4,7 @@ import { validateLogin } from '/assets/js/validate/validateLogin.js'; // const v
 import { login } from '/assets/js/firebaseAuth.js';
 
 
+
 //export const printError = document.getElementById('error-message');
 export const templateHome = () => {
   document.getElementById('root').innerHTML = `
@@ -49,26 +50,11 @@ document.getElementById('error-message').innerHTML="Usuario / contraseña invál
 document.getElementById('email2').value='';
 document.getElementById('password2').value='';
 
-}
-else {
+} 
+ else {
   login(mailValue, passValue)
-  /*.catch(function(error) {
-    // Handle Errors here.
-   let errorCode = error.code;
-    let errorMessage = error.message;
-   // errorLogin();
-   if (errorCode === 'auth/wrong-password') {
-    document.getElementById('error-message').innerHTML="Contraseña inválida";
-   } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
-     document.getElementById('error-message').innerHTML="Usuario no registrado";
-   }
-    console.log(errorCode)                                                                                                                                                          
-    console.log(errorMessage)
-  
-   
-  });*/
 
-}
+  }
 });
  //
 document.getElementById('btn-reset').addEventListener('click', () => {
@@ -76,11 +62,11 @@ document.getElementById('btn-reset').addEventListener('click', () => {
   templateForgotPassword();
   window.location.hash = '#/forgotpassword';
  
- 
+
 });
 
 
-}
+  }
 
 export const userInvalid =(errorCode) =>{
 
