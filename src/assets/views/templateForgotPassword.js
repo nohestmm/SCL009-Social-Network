@@ -22,11 +22,6 @@ export const templateForgotPassword= () => {
 
      <div>
                                                 `
-  //enlace a registro
-   /* document.getElementById('btn-send').addEventListener('click', () => {
-      templateHome();
-      window.location.hash = '#/home';
-    })*/
    
 document.getElementById('btn-send').addEventListener('click', () => {
  

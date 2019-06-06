@@ -1,17 +1,10 @@
-
-
 import { templateAbout } from './templateAbout.js'; //registro
 import { templateForgotPassword } from './templateForgotPassword.js'; //registro
 import { validateLogin } from '/assets/js/validate/validateLogin.js'; // const validate
-
 import { login } from '/assets/js/firebaseAuth.js';
- // const login
-
-export let event =0;
-
-//import { observer } from '/assets/js/firebaseAuth.js'; // Observador a ver si efectivamente loggea
 
 
+//export const printError = document.getElementById('error-message');
 export const templateHome = () => {
   document.getElementById('root').innerHTML = `
   <div class="first-screen">
@@ -56,17 +49,26 @@ document.getElementById('error-message').innerHTML="Usuario / contraseña invál
 document.getElementById('email2').value='';
 document.getElementById('password2').value='';
 
-} else {
-
-  login(mailValue, passValue);
-  
-  document.getElementById('error-message').innerHTML="inválido";
- 
- 
 }
+else {
+  login(mailValue, passValue)
+  /*.catch(function(error) {
+    // Handle Errors here.
+   let errorCode = error.code;
+    let errorMessage = error.message;
+   // errorLogin();
+   if (errorCode === 'auth/wrong-password') {
+    document.getElementById('error-message').innerHTML="Contraseña inválida";
+   } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
+     document.getElementById('error-message').innerHTML="Usuario no registrado";
+   }
+    console.log(errorCode)                                                                                                                                                          
+    console.log(errorMessage)
+  
+   
+  });*/
 
-
-
+}
 });
  //
 document.getElementById('btn-reset').addEventListener('click', () => {

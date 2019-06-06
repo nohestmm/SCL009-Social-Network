@@ -1,7 +1,7 @@
-import { templateProject } from "../views/templateProject.js";
+//import { templateProject } from "../views/templateProject.js";
 import { templateHome } from "../views/templateHome.js";
-import { event } from "../views/templateHome.js";
-import { templateAbout } from "../views/templateAbout.js";
+//import { event } from "../views/templateHome.js";
+//import { templateAbout } from "../views/templateAbout.js";
 
 //import { templateForgotPassword } from "../views/templateForgotPassword.js";
 
@@ -32,16 +32,20 @@ export const login = (mail, pass) => {firebase.auth().signInWithEmailAndPassword
   window.location.hash = '#/project'; 
 })
 .catch(function(error) {
-  //templateHome();
- 
-  //document.getElementById("error-message").innerHTML= "usuario o contraseña inválida";
- //window.location.hash = '#/home';
-
     // Handle Errors here.
-    let errorCode = error.code;
+   let errorCode = error.code;
     let errorMessage = error.message;
    // errorLogin();
-    
+   /*if (errorCode === 'auth/wrong-password') {
+    document.getElementById('error-message').innerHTML="Contraseña inválida";
+   } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
+     document.getElementById('error-message').innerHTML="Usuario no registrado";
+   }*/
+   if (errorCode === 'auth/wrong-password') {
+    alert("Contraseña inválida! ¡vuelve a intentar!")
+   } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
+     alert("Usuario no registrado")
+   }
     console.log(errorCode)                                                                                                                                                          
     console.log(errorMessage)
   
@@ -67,15 +71,9 @@ export const observer = () => {
   firebase.auth().onAuthStateChanged(function(user) {
 
     if (user) { 
+      window.location.hash = '#/project'; 
 // User is signed in.
-      let displayName = user.displayName;
-      let email = user.email;
-      let emailVerified = user.emailVerified;
-      let photoURL = user.photoURL;
-      let isAnonymous = user.isAnonymous;
-      let uid = user.uid;
-      let providerData = user.providerData;
-      // ...
+    
 
     } 
  
@@ -125,3 +123,11 @@ export const resetPassword = (email) => {
 
   });
 }
+
+/*export const errorLogin = (error) => {
+  if (error === 'auth/wrong-password') {
+    return "Contraseña inválida";
+   } else if (error === 'auth/invalid-email'  || error === 'auth/user-not-found') {
+     return "Usuario no registrado";
+   }
+}*/
