@@ -32,16 +32,20 @@ export const login = (mail, pass) => {firebase.auth().signInWithEmailAndPassword
   window.location.hash = '#/project'; 
 })
 .catch(function(error) {
-  //templateHome();
- 
-  //document.getElementById("error-message").innerHTML= "usuario o contraseña inválida";
- //window.location.hash = '#/home';
-
     // Handle Errors here.
-    let errorCode = error.code;
+   let errorCode = error.code;
     let errorMessage = error.message;
    // errorLogin();
-    
+   /*if (errorCode === 'auth/wrong-password') {
+    document.getElementById('error-message').innerHTML="Contraseña inválida";
+   } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
+     document.getElementById('error-message').innerHTML="Usuario no registrado";
+   }*/
+   if (errorCode === 'auth/wrong-password') {
+    alert("Contraseña inválida! ¡vuelve a intentar!")
+   } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
+     alert("Usuario no registrado")
+   }
     console.log(errorCode)                                                                                                                                                          
     console.log(errorMessage)
   
@@ -119,3 +123,11 @@ export const resetPassword = (email) => {
 
   });
 }
+
+/*export const errorLogin = (error) => {
+  if (error === 'auth/wrong-password') {
+    return "Contraseña inválida";
+   } else if (error === 'auth/invalid-email'  || error === 'auth/user-not-found') {
+     return "Usuario no registrado";
+   }
+}*/

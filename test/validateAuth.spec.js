@@ -1,9 +1,9 @@
-import { validateUser } from '/assets/js/validate.js';
+import { validateLogin } from '../src/assets/js/validate/validateLogin.js';
 //testing
-describe("función validateUser" ,() => {
-    it("debería retornar false si es que falta un campo", () => {
-        expect(validateUser("moco","", "123456").toBe(false))
-        expect(validateUser ())
+describe("función validateLogin" ,() => {
+    it("debería retornar true si es que falta un campo", () => {
+        expect(validateLogin("", "123456")).toBe(true)
+      
     })
 })
 
