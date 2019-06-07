@@ -7,8 +7,8 @@ export const templateProject = () => {
   observer();
   document.getElementById('root').innerHTML = `<p>Template Project</p>
   
-                                              <button id="btn-home">Ir a Home</button>
-                                              <button id="sign-out">Cerrar sesión</button>`
+                                              <button class="form" id="btn-home">Ir a Home</button>
+                                              <button class= "form" id="sign-out">Cerrar sesión</button>`
                             
   /*document.getElementById('btn-home').addEventListener('click', () => {
     templateHome();
