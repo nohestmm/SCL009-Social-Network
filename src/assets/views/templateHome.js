@@ -2,6 +2,8 @@ import { templateAbout } from './templateAbout.js'; //registro
 import { templateForgotPassword } from './templateForgotPassword.js'; //registro
 import { validateLogin } from '/assets/js/validate/validateLogin.js'; // const validate
 import { login } from '/assets/js/firebaseAuth.js';
+import { googleAuth } from '/assets/js/firebaseAuth.js';
+import { facebookAuth } from '/assets/js/firebaseAuth.js';
 
 
 
@@ -65,6 +67,18 @@ document.getElementById('btn-reset').addEventListener('click', () => {
 
 });
 
+document.getElementById('btn-google').addEventListener('click',() =>{
+
+  googleAuth();
+
+});
+
+document.getElementById('btn-facebook').addEventListener('click',() =>{
+
+  facebookAuth();
+
+});
+
 
   }
 
@@ -82,4 +96,5 @@ export const userInvalid =(errorCode) =>{
   }
   
 }
+
 
