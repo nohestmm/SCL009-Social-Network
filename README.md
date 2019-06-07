@@ -31,9 +31,19 @@ YO como usuaria registrada en **NoMoreCommunity** QUIERO poder iniciar sesión m
 YO como usuaria registrada en **NoMoreCommunity** QUIERO poder iniciar sesión mediante Google PARA poder navegar en la APP.
 
 **Criterios de aceptación**
-- Permitiar logearme en Google mediante un botón de la interfaz.
+- Permitiar logearme en Google mediante un botón de la interfaz. [listo]
 
-**HISTORIA DE USUARIO N° 5** 
+**HISTORIA DE USUARIO N° 5**
+Yo como usuario loggeado de NoMoreCommunity, QUIERO poder cerrar sesión de mi cuenta PARA poder salir de la APP.
+**Criterios de aceptación**
+- Botón que cierre sesión y muestre la pantalla principal, con mensaje de despedida. [listo]
+
+**HISTORIA DE USUARIO N° 6**
+Yo como usuario de NoMoreCommunity, QUIERO que la APP me informe si tengo algún campo con error PARA poder verificar que lo que escribo es correcto en la APP.
+**Criterios de aceptación**
+- Mostrar al usuario los respectivos mensajes de error con los casos que se puedan presentar, campos vacíos, usuarios no registrados, etcétera. [listo]
+
+**HISTORIA DE USUARIO N° 7** 
 YO como usuaria loggeada de **NoMoreCommunity** QUIERO poder publicar un post, editarlo o eliminarlo, PARA poder compartir con las demás usuarias de la comunidad.
 
 **Criterios de aceptación**
@@ -41,7 +51,4 @@ YO como usuaria loggeada de **NoMoreCommunity** QUIERO poder publicar un post, e
 - Permitir al usuario editar un post *in place* y republicarlo.
 - Permitir al usuario eliminar un post, previa confirmación con **Alert** . 
 
-**HISTORIA DE USUARIO N° 6**
-Yo como usuario loggeado de NoMoreCommunity, QUIERO poder cerrar sesión de mi cuenta PARA poder salir de la APP.
-**Criterios de aceptación**
-- Botón que cierre sesión y muestre la pantalla principal, con mensaje de despedida. [listo]
+
