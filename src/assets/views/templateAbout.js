@@ -1,6 +1,6 @@
 import { templateHome } from './templateHome.js'; // login
 import { register } from '/assets/js/firebaseAuth.js';
-import { validateUser } from '/assets/js/validate/validateRegister.js'; // const validate
+import { validateRegister, validateMail } from '/assets/js/validate/validateRegister.js'; // const validate
 
 
 
@@ -26,14 +26,20 @@ export const templateAbout = () => {
     let emailValue = document.getElementById('email').value;
     let passwordValue = document.getElementById('password').value;
     
-if (validateUser(nameValue, emailValue, passwordValue)) {
+if (validateRegister(nameValue, emailValue, passwordValue)) {
   document.getElementById("password-error").innerHTML = "Completa todos los campos requeridos"; 
 
   document.getElementById('name').value='';
   document.getElementById('email').value='';
   document.getElementById('password').value='';
 
-} else {
+ } else if (validateMail(emailValue)) {
+  document.getElementById('password-error').innerHTML="Formato de correo inválido";
+  document.getElementById('email').value='';
+  document.getElementById('password').value='';
+
+}
+else {
   register(emailValue, passwordValue);
 }
     

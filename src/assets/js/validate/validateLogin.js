@@ -4,3 +4,4 @@ export const validateLogin = (mail, password) => {
     }
     return false;
 }
+

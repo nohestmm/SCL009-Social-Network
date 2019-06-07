@@ -79,10 +79,3 @@ body {
     width: 25px;
     height: 25px;
 }
-
-h3,
-#btn-about {
-    float: left;
-    margin-left: 3.5rem;
-    justify-content: center;
-}

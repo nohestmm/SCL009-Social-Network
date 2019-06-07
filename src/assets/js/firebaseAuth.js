@@ -1,10 +1,5 @@
-//import { templateProject } from "../views/templateProject.js";
 import { templateHome } from "../views/templateHome.js";
 import { userInvalid } from "../views/templateHome.js";
-//import { event } from "../views/templateHome.js";
-//import { templateAbout } from "../views/templateAbout.js";
-
-//import { templateForgotPassword } from "../views/templateForgotPassword.js";
 
 
 //Todas las funciones de registro e inicio de sesión de firebase
@@ -39,22 +34,7 @@ export const login = (mail, pass) => {firebase.auth().signInWithEmailAndPassword
     templateHome();
 
     userInvalid(errorCode);
-   // errorLogin();
-   /*if (errorCode === 'auth/wrong-password') {
-    document.getElementById('error-message').innerHTML="Contraseña inválida";
-   } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
-     document.getElementById('error-message').innerHTML="Usuario no registrado";
-   }*/
-  //  if (errorCode === 'auth/wrong-password') {
-
-  //   alert("Contraseña inválida! ¡vuelve a intentar!")
-  //  } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
-  //    alert("Usuario no registrado")
-  //  }
-  //   console.log(errorCode)                                                                                                                                                          
-  //   console.log(errorMessage)
   
-   
   });
 }
 
@@ -117,17 +97,7 @@ export const resetPassword = (email) => {
   
   auth.sendPasswordResetEmail(emailAddress).then(function() {
     
-
-
   }).catch(function(error) {
 
   });
 }
-
-/*export const errorLogin = (error) => {
-  if (error === 'auth/wrong-password') {
-    return "Contraseña inválida";
-   } else if (error === 'auth/invalid-email'  || error === 'auth/user-not-found') {
-     return "Usuario no registrado";
-   }
-}*/
