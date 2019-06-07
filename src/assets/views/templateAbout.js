@@ -13,7 +13,7 @@ export const templateAbout = () => {
   <input class="form" type="text" id="email" name="email" placeholder="Ingresa tu correo" required>
    <input class="form" type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
    <p id = "password-error"></p>
-   <button id="register-here" type="submit">Registrar Usuario</button>
+   <button id="register-here" type = "button">Registrar Usuario</button>
    <button id ="btn-back"> Regresar</button>
   
    <div>
@@ -52,3 +52,12 @@ else {
 
   });
 }
+
+// export const errorRegister =(errorCode) =>{
+
+//   if (errorCode === 'auth/email-already-in-use'){
+//     document.getElementById('password-error').innerHTML = "El correo ya existe";
+
+//   }
+
+// }

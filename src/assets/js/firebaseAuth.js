@@ -1,7 +1,5 @@
 //import { templateProject } from "../views/templateProject.js";
-import { templateHome } from "../views/templateHome.js";
-import { userInvalid } from "../views/templateHome.js";
-
+import { templateHome, userInvalid } from "../views/templateHome.js";
 export let name, email;
 //import { event } from "../views/templateHome.js";
 //import { templateAbout } from "../views/templateAbout.js";
@@ -21,11 +19,8 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
 .catch(error => {
 // Handle Errors here.
 let errorCode = error.code;
+userInvalid(errorCode);
 let errorMessage = error.message;
-
-// templateHome();
-// window.location.hash = '#/home';
-
 });
 }
 
@@ -63,43 +58,9 @@ export const login = (mail, pass) => {
   });
 }
 
-export const signOut = () => {firebase.auth().signOut()
-.then(function() {
-  templateHome();
-  //document.getElementById("error-message").innerHTML= "Vuelve pronto ÑAÑAÑA";
- window.location.hash = '#/home';
-    // Sign-out successful.
-  }).catch(error => {
-    // An error happened.
-  });
-
-}
-
-//Observer
-export const observer = () => {
-
-  firebase.auth().onAuthStateChanged( user=> {
-
-    if (user) { 
-      name = user.displayName;
-      console.log(name);
-      email = user.email;
-      console.log(email);
 
 
-      window.location.hash = '#/project'; 
-// User is signed in.
-    
 
-    } 
- 
-    
-   else{
-// User is signed out.
-window.location.hash="";
-}
-    });
-}
 
 
 
@@ -122,11 +83,14 @@ export const resetPassword = (email) => {
   let auth = firebase.auth();
   let emailAddress = email;
   
-  auth.sendPasswordResetEmail(emailAddress).then(function() {
+  auth.sendPasswordResetEmail(emailAddress)
+  .then(() =>{
+return true;
     
+  }).catch(error => {
 
-
-  }).catch(function(error) {
+let errorCode = error.code;
+userInvalid(errorCode);
 
   });
 }
@@ -189,6 +153,43 @@ export const facebookAuth =() =>{
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
     // ...
+  });
+
+}
+
+//Observer
+export const observer = () => {
+
+  firebase.auth().onAuthStateChanged( user=> {
+
+    if (user) { 
+      name = user.displayName;
+      console.log(name);
+      email = user.email;
+      console.log(email);
+
+
+      window.location.hash = '#/project'; 
+// User is signed in.
+    
+
+    } 
+ 
+    
+   else{
+// User is signed out.
+window.location.hash="";
+}
+    });
+}
+export const signOut = () => {firebase.auth().signOut()
+.then(() =>{
+  templateHome();
+  //document.getElementById("error-message").innerHTML= "Vuelve pronto ÑAÑAÑA";
+ window.location.hash = '#/home';
+    // Sign-out successful.
+  }).catch(error => {
+    // An error happened.
   });
 
 }

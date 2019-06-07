@@ -94,6 +94,12 @@ export const userInvalid =(errorCode) =>{
     document.getElementById('error-message').innerHTML = "Usuario no registrado";
 
   }
+  if (errorCode === 'auth/email-already-in-use'){
+    document.getElementById('password-error').innerHTML = "El correo ya existe";
+
+  }
+
+
   
 }
 
