@@ -15,6 +15,7 @@ export const templateHome = () => {
   <h1>Iniciar sesión</h1>
   <input class="form" type="text" id="email2" name="email" placeholder="Ingresa tu correo" required>
   <input class="form" type="password" id="password2" name="password" placeholder="Ingresa tu contraseña" required>
+  
   <button class="btn-login" id="sign-in" type="submit">INICIAR SESIÓN</button>
   <p id="error-message"></p>
   <h3>¿No tienes cuenta?</h3>
@@ -25,8 +26,8 @@ export const templateHome = () => {
 </div>
   <div>
 <div class="icons">
-  <button id="btn-google"  ><img class = "icon" src='google.ico' alt="google">Inicia sesión con Google</button>
-  <button id="btn-facebook"><img class = "icon" src='facebook.ico' alt="facebook">Inicia sesión con Facebook</button>
+  <button id="btn-google"  ><img class = "icon" src='../assets/img/google.ico' alt="google">Inicia sesión con Google</button>
+  <button id="btn-facebook"><img class = "icon" src='../assets/img/facebook.ico' alt="facebook">Inicia sesión con Facebook</button>
  
 </div>
    
