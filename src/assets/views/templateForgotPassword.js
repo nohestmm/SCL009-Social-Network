@@ -1,6 +1,7 @@
 import { templateHome } from './templateHome.js';
 import { resetPassword } from '/assets/js/firebaseAuth.js'; // const reset password
 import { validateForgotPassword } from '/assets/js/validate/validateForgotPassword.js';
+import { validateMail } from '/assets/js/validate/validateRegister.js'; // const validate
 
 
 
@@ -21,11 +22,6 @@ export const templateForgotPassword= () => {
       <div>
     <div>
                                                 `
-    //enlace a registro
-    /* document.getElementById('btn-send').addEventListener('click', () => {
-      templateHome();
-      window.location.hash = '#/home';
-    })*/
    
   document.getElementById('btn-send').addEventListener('click', () => {
  
@@ -36,12 +32,22 @@ export const templateForgotPassword= () => {
       document.getElementById('email-reset').value='';
   
   
-    } else {
-        resetPassword(email); 
-        alert("Correo enviado exitosamente");
-        templateHome();
-        window.location.hash = '#/home';
-      }
+  }  else if (validateMail(email)) {
+    document.getElementById('error-message').innerHTML="Formato de correo inválido";
+    document.getElementById('email-reset').value='';
+   
+  
+  }
+  else {
+  
+  if (resetPassword(email) === true){
+  document.getElementById('error-message').innerHTML="Correo enviado exitosamente";
+  }
+//   templateHome();
+// window.location.hash = '#/home';
+   
+ 
+  }
   });
 
   document.getElementById('btn-back-password').addEventListener('click',()=>{

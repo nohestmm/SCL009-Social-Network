@@ -1,5 +1,5 @@
 import { initRouter } from './route.js';
-import { observer } from './assets/js/firebaseAuth.js';
+//import { observer } from './assets/js/firebaseAuth.js';
 
 const firebaseInit = () => {
   // Initialize Firebase
@@ -14,7 +14,9 @@ const firebaseInit = () => {
     appId: "1:108376578479:web:da6682d105a33503"
   };
   firebase.initializeApp(firebaseConfig);
+
 }
+
 
 const init = () => {
  
@@ -25,7 +27,3 @@ const init = () => {
 }
 
 window.addEventListener('load', init);
-
-
-
-

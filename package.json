@@ -15,6 +15,7 @@
   },
   "scripts": {
 <<<<<<< HEAD
+<<<<<<< HEAD
    "test": "jest --converage",
    "eslint": "eslint --ext .js src/ test/",
    "htmlhint": "htmlhint src/*.html",
@@ -40,6 +41,9 @@
   "homepage": "https://github.com/dhaarmaa/SCL009-Social-Network#readme",
 =======
     "test": "jest --coverage", 
+=======
+    "test": "jest --coverage",
+>>>>>>> 8ad6d6bcfaf75113ba014fae288f6452cb0a03f7
     "eslint": "eslint --ext .js src/ test/",
     "htmlhint": "htmlhint src/*.html",
     "pretest": "npm run eslint && npm run htmlhint",
@@ -74,6 +78,7 @@
     "htmlhint": "^0.11.0",
     "jest": "^24.8.0"
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 =======
@@ -126,3 +131,6 @@
 =======
 }
 >>>>>>> f311bdcbc317a9059ada149f0aa51b919e60012e
+=======
+}
+>>>>>>> 8ad6d6bcfaf75113ba014fae288f6452cb0a03f7

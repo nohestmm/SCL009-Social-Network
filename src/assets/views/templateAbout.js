@@ -1,21 +1,22 @@
 import { templateHome } from './templateHome.js'; // login
 import { register } from '/assets/js/firebaseAuth.js';
-import { validateUser } from '/assets/js/validate/validateRegister.js'; // const validate
+import { validateRegister, validateMail } from '/assets/js/validate/validateRegister.js'; // const validate
 
 
 
 //event =0;
 
 export const templateAbout = () => {
-  document.getElementById('root').innerHTML = `
-   <div class="first-screen">
-      <h1>¡Crea tu cuenta ahora!</h1>
-      <input class="form" type="text" id="name" name="name" placeholder="Alias" required>
-      <input class="form" type="text" id="email" name="email" placeholder="Ingresa tu correo" required>
-      <input class="form" type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
-      <p id = "password-error"></p>
-      <button id="register-here" type="submit">Registrar Usuario</button>
-      <button id ="btn-back"> Regresar</button>
+  document.getElementById('root').innerHTML = `<div class="first-screen">
+  <h1>¡Crea tu cuenta ahora!</h1>
+  <input class="form" type="text" id="name" name="name" placeholder="Alias" required>
+  <input class="form" type="text" id="email" name="email" placeholder="Ingresa tu correo" required>
+   <input class="form" type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+   <input type="hidden" id="id">
+   <p id = "password-error"></p>
+   <button id="register-here" type = "button">Registrar Usuario</button>
+   <button id ="btn-back"> Regresar</button>
+  
    <div>
                                               `
 
@@ -26,16 +27,22 @@ export const templateAbout = () => {
     let emailValue = document.getElementById('email').value;
     let passwordValue = document.getElementById('password').value;
     
-    if (validateUser(nameValue, emailValue, passwordValue)) {
-      document.getElementById("password-error").innerHTML = "Completa todos los campos requeridos"; 
+if (validateRegister(nameValue, emailValue, passwordValue)) {
+  document.getElementById("password-error").innerHTML = "Completa todos los campos requeridos"; 
 
       document.getElementById('name').value='';
       document.getElementById('email').value='';
       document.getElementById('password').value='';
 
-    } else {
-        register(emailValue, passwordValue);
-      }
+ } else if (validateMail(emailValue)) {
+  document.getElementById('password-error').innerHTML="Formato de correo inválido";
+  document.getElementById('email').value='';
+  document.getElementById('password').value='';
+
+}
+else {
+  register(emailValue, passwordValue);
+}
     
     //templateHome();
     //window.location.hash = '#/home';
@@ -47,3 +54,12 @@ export const templateAbout = () => {
 
   });
 }
+
+// export const errorRegister =(errorCode) =>{
+
+//   if (errorCode === 'auth/email-already-in-use'){
+//     document.getElementById('password-error').innerHTML = "El correo ya existe";
+
+//   }
+
+// }

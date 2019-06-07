@@ -8,6 +8,17 @@
   min-width:80%;
   max-width: 80%;
 }
+header{
+    font-family: 'El Messiri';
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+footer{
+    font-family: 'El Messiri';
+    display: flex;
+    justify-content: center;
+}
 
  body{
    background-image: linear-gradient(to top, #e9a1d3, #d682bb, #c262a2, #af408a, #9b1372);
@@ -26,7 +37,7 @@
     padding: 30px;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    margin-top: 6%;
+    margin-top: 10px;
     font-family: 'El Messiri';
   
 }
