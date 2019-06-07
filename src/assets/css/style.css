@@ -7,6 +7,17 @@
 body {
     background-image: linear-gradient(to left, #e9a1d3, #d682bb, #c262a2, #af408a, #9b1372);
 }
+header{
+    font-family: 'El Messiri';
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+footer{
+    font-family: 'El Messiri';
+    display: flex;
+    justify-content: center;
+}
 
 .first-screen {
     margin: auto;
@@ -19,7 +30,7 @@ body {
     padding: 30px;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    margin-top: 6%;
+    margin-top: 10px;
     font-family: 'El Messiri';
 }
 
