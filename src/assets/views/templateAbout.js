@@ -28,13 +28,20 @@ export const templateAbout = () => {
     let passwordValue = document.getElementById('password').value;
     
 if (validateRegister(nameValue, emailValue, passwordValue)) {
-  document.getElementById("password-error").innerHTML = "Completa todos los campos requeridos"; 
+  if (passwordValue.length <6 && passwordValue.length >0){
+    document.getElementById("password-error").innerHTML = "Contrasena de minimo 6 caracteres"; 
+    }
+  
+    else {
+      document.getElementById("password-error").innerHTML = "Completa todos los campos requeridos"; 
+  
+   }
+        document.getElementById('name').value='';
+        document.getElementById('email').value='';
+        document.getElementById('password').value='';;
 
-  document.getElementById('name').value='';
-  document.getElementById('email').value='';
-  document.getElementById('password').value='';
-
- } else if (validateMail(emailValue)) {
+ } 
+ else if (validateMail(emailValue)) {
   document.getElementById('password-error').innerHTML="Formato de correo inválido";
   document.getElementById('email').value='';
   document.getElementById('password').value='';
@@ -42,6 +49,7 @@ if (validateRegister(nameValue, emailValue, passwordValue)) {
 }
 else {
   register(emailValue, passwordValue);
+  
 }
     
     //templateHome();

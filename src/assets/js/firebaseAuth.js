@@ -58,13 +58,6 @@ export const login = (mail, pass) => {
   });
 }
 
-
-
-
-
-
-
-
 const verifyAccount = () => { //envía correo de verificación al user, funcionando OK
 let user= firebase.auth().currentUser;
 
