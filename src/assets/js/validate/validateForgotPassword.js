@@ -1,6 +1,6 @@
 export const validateForgotPassword = (email) =>{
 
-    if (email === '' || typeof(email) === "undefined" ) {
+    if (email === ''|| typeof(email) === "undefined" ) {
         return true;
         
     }

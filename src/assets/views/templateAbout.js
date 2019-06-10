@@ -18,7 +18,7 @@ export const templateAbout = () => {
    <button id ="btn-back"> Regresar</button>
   
    <div>
-                                              `
+                                             `
 
 
    

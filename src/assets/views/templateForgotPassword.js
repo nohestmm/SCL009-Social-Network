@@ -52,6 +52,7 @@ export const templateForgotPassword= () => {
 
   document.getElementById('btn-back-password').addEventListener('click',()=>{
     templateHome();
+    
     window.location.hash = '#/home';
    
   });

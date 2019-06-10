@@ -83,7 +83,7 @@ export const userInvalid =(errorCode) =>{
 
 
   if (errorCode === 'auth/wrong-password'){
-  document.getElementById('error-message').innerHTML = "Contraseña inválida! ¡vuelve a intentar!";
+  document.getElementById('error-message').innerHTML =  "Contraseña inválida! ¡vuelve a intentar!";
 
   }
 

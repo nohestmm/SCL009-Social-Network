@@ -5,5 +5,6 @@
    const refText = database.ref().child('post');
    console.log(refText)
    refText.on('value', data => {
+      
      
    })

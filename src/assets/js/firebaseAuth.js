@@ -39,22 +39,6 @@ export const login = (mail, pass) => {
     templateHome();
 
     userInvalid(errorCode);
-   // errorLogin();
-   /*if (errorCode === 'auth/wrong-password') {
-    document.getElementById('error-message').innerHTML="Contraseña inválida";
-   } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
-     document.getElementById('error-message').innerHTML="Usuario no registrado";
-   }*/
-  //  if (errorCode === 'auth/wrong-password') {
-
-  //   alert("Contraseña inválida! ¡vuelve a intentar!")
-  //  } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
-  //    alert("Usuario no registrado")
-  //  }
-  //   console.log(errorCode)                                                                                                                                                          
-  //   console.log(errorMessage)
-  
-   
   });
 }
 

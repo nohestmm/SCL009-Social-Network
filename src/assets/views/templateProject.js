@@ -17,7 +17,7 @@ export const templateProject = () => {
   
                                               <button id="btn-home">Ir a Home</button>
                                               <button id="sign-out">Cerrar sesión</button>
-                                              `
+                                             `
                             
   /*document.getElementById('btn-home').addEventListener('click', () => {
     templateHome();
