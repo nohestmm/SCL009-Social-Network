@@ -12,8 +12,8 @@ export const register = (email, password) => {
 firebase.auth().createUserWithEmailAndPassword(email, password)
 .then(() =>{
     verifyAccount();
-    observer();
-  
+    //observer();
+    window.location.hash = '#/home'; 
     
 })
 .catch(error => {
