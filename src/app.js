@@ -17,6 +17,8 @@ const firebaseInit = () => {
 
 }
 
+ // Initialize Cloud Firestore through Firebase
+// let db = firebase.firestore();
 
 const init = () => {
  
