@@ -4,8 +4,7 @@
    console.log(database);
    const refText = database.ref().child('post');
    console.log(refText)
-   refText.on('value', data => {
-   })
+   refText.on('value', data => {})
      
 //    })
 // Initialize Cloud Firestore through Firebase
