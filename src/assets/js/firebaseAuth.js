@@ -85,7 +85,7 @@ export const resetPassword = (email) => {
   
   auth.sendPasswordResetEmail(emailAddress)
   .then(() =>{
-return true;
+
     
   }).catch(error => {
 

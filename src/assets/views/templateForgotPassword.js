@@ -42,9 +42,8 @@ document.getElementById('btn-send').addEventListener('click', () => {
   }
   else {
   
-  if (resetPassword(email) === true){
-  document.getElementById('error-message').innerHTML="Correo enviado exitosamente";
-  }
+    resetPassword(email)
+    document.getElementById('error-message').innerHTML="Correo enviado exitosamente";
 //   templateHome();
 // window.location.hash = '#/home';
    
