@@ -10,7 +10,7 @@ export const validateRegister = (name, mail, password) => {
         if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/.test(email)){
             return false;
         }else {
-        return true;
+            return true;
         }   
     }
     //validar undefined y null

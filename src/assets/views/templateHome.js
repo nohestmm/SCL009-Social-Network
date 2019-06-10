@@ -29,14 +29,18 @@ export const templateHome = () => {
   <button id="btn-google"  ><img class = "icon" src='../assets/img/google.ico' alt="google">Inicia sesión con Google</button>
   <button id="btn-facebook"><img class = "icon" src='../assets/img/facebook.ico' alt="facebook">Inicia sesión con Facebook</button>
  
-    </div>
+</div>
    
-  </div>
+   <div>
                                               `
 //enlace a registro
-  document.getElementById('btn-about').addEventListener('click', () => { 
-     templateAbout();
-   window.location.hash = '#/about';
+  document.getElementById('btn-about').addEventListener('click', () => {
+  
+
+
+templateAbout();
+window.location.hash = '#/about';
+
   });
   //si se loggea con éxito, pasar a muro
 document.getElementById('sign-in').addEventListener('click', () => {
@@ -83,11 +87,11 @@ export const userInvalid =(errorCode) =>{
 
 
   if (errorCode === 'auth/wrong-password'){
-  document.getElementById('error-message').innerHTML =  "Contraseña inválida! ¡vuelve a intentar!";
+  document.getElementById('error-message').innerHTML = "Contraseña inválida! ¡vuelve a intentar!";
 
   }
 
-  if (errorCode === 'auth/invalid-email'|| errorCode === 'auth/user-not-found'){
+  if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found'){
     document.getElementById('error-message').innerHTML = "Usuario no registrado";
 
   }
@@ -99,5 +103,3 @@ export const userInvalid =(errorCode) =>{
 
   
 }
-
-

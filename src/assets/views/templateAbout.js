@@ -18,11 +18,11 @@ export const templateAbout = () => {
    <button id ="btn-back"> Regresar</button>
   
    <div>
-                                             `
+                                              `
 
 
    
-  document.getElementById('register-here').addEventListener('click', ()=> {
+   document.getElementById('register-here').addEventListener('click', ()=> {
     let nameValue= document.getElementById('name').value;
     let emailValue = document.getElementById('email').value;
     let passwordValue = document.getElementById('password').value;
@@ -30,9 +30,9 @@ export const templateAbout = () => {
 if (validateRegister(nameValue, emailValue, passwordValue)) {
   document.getElementById("password-error").innerHTML = "Completa todos los campos requeridos"; 
 
-      document.getElementById('name').value='';
-      document.getElementById('email').value='';
-      document.getElementById('password').value='';
+  document.getElementById('name').value='';
+  document.getElementById('email').value='';
+  document.getElementById('password').value='';
 
  } else if (validateMail(emailValue)) {
   document.getElementById('password-error').innerHTML="Formato de correo inválido";
@@ -46,8 +46,7 @@ else {
     
     //templateHome();
     //window.location.hash = '#/home';
-  });
-  
+     });
   document.getElementById('btn-back').addEventListener('click',()=>{
     templateHome();
     window.location.hash = '#/home';
