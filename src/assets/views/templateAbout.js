@@ -20,8 +20,7 @@ export const templateAbout = () => {
    <div>
                                               `
 
-
-   
+ 
    document.getElementById('register-here').addEventListener('click', ()=> {
     let nameValue= document.getElementById('name').value;
     let emailValue = document.getElementById('email').value;

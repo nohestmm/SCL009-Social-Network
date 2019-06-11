@@ -1,7 +1,7 @@
 import { initRouter } from './route.js';
 //import { observer } from './assets/js/firebaseAuth.js';
 
-const firebaseInit = () => {
+export const firebaseInit = () => {
   // Initialize Firebase
   // Your web app's Firebase configuration
   let firebaseConfig = {
@@ -14,11 +14,12 @@ const firebaseInit = () => {
     appId: "1:108376578479:web:da6682d105a33503"
   };
   firebase.initializeApp(firebaseConfig);
-
+// Initialize Cloud Firestore through Firebase
+let db = firebase.firestore();
 }
 
- // Initialize Cloud Firestore through Firebase
-// let db = firebase.firestore();
+ //Initialize Cloud Firestore through Firebase
+//let db = firebase.firestore();
 
 const init = () => {
  
