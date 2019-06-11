@@ -37,7 +37,7 @@ if (validateRegister(nameValue, emailValue, passwordValue)) {
    }
         document.getElementById('name').value='';
         document.getElementById('email').value='';
-        document.getElementById('password').value='';;
+        document.getElementById('password').value='';
 
  } 
  else if (validateMail(emailValue)) {
@@ -48,6 +48,12 @@ if (validateRegister(nameValue, emailValue, passwordValue)) {
 }
 else {
   register(emailValue, passwordValue);
+  // document.getElementById('name').style.display="none";
+  //       document.getElementById('email').style.display="none";
+  //       document.getElementById('password').style.display="none";
+  // document.getElementById('register-here').style.display="none";
+  // document.getElementById('password-error').innerHTML="Registro exitoso";
+
   
 }
     

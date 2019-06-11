@@ -11,6 +11,7 @@ export let name, email;
 export const register = (email, password) => {
 firebase.auth().createUserWithEmailAndPassword(email, password)
 .then(() =>{
+  //userData();
     verifyAccount();
     //observer();
     window.location.hash = '#/home'; 
@@ -186,3 +187,19 @@ export const signOut = () => {firebase.auth().signOut()
   });
 
 }
+
+//  const userData = () => {
+//   let db = firebase.firestore();
+//   let namew = document.getElementById('name').value;
+//   let emailw = document.getElementById('email').value;
+
+//   db.collection("users").add({
+//      name: namew,
+//      email: emailw
+//   })
+//         .then(function(docRef) {
+//            console.log("Document written with ID: ", docRef.id);
+//      })
+//      .catch(function(error) {
+//            console.error("Error adding document: ", error);
+//      });
