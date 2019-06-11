@@ -14,8 +14,7 @@ body {
     margin-top: 20px;
 }
 
-h1,
-h6 {
+h1 {
     font-family: 'El Messiri';
     justify-content: center;
     margin-top: 10px;
@@ -48,6 +47,7 @@ h6 {
 
 a {
     cursor: pointer;
+    color: #B52C72;
 }
 
 footer {

@@ -1,9 +1,9 @@
 import { templateAbout } from './templateAbout.js'; //registro
 import { templateForgotPassword } from './templateForgotPassword.js'; //registro
-import { validateLogin } from '/assets/js/validate/validateLogin.js'; // const validate
-import { login } from '/assets/js/firebaseAuth.js';
-import { googleAuth } from '/assets/js/firebaseAuth.js';
-import { facebookAuth } from '/assets/js/firebaseAuth.js';
+import { validateLogin } from '../js/validate/validateLogin.js'; // const validate
+import { login } from '../js/firebaseAuth.js';
+import { googleAuth } from '../js/firebaseAuth.js';
+
 
 
 
@@ -13,8 +13,10 @@ export const templateHome = () => {
   <div class="first-screen">
   <div class="container-login">
       <div class="header-login">
-          <img class="logo-login" src="./assets/img/logo.png">
-          <h1>No More</h1>
+         <img class="logo-login" src="./assets/img/logo.png">
+          <div><h1>No More </h1>
+          <h6>COMMUNITY</h6></div>
+
           
       </div>
       <div class="content-login">
