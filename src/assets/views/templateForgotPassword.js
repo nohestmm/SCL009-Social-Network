@@ -1,7 +1,7 @@
 import { templateHome } from './templateHome.js';
-import { resetPassword } from '/assets/js/firebaseAuth.js'; // const reset password
-import { validateForgotPassword } from '/assets/js/validate/validateForgotPassword.js';
-import { validateMail } from '/assets/js/validate/validateRegister.js'; // const validate
+import { resetPassword } from '../js/firebaseAuth.js'; // const reset password
+import { validateForgotPassword } from '../js/validate/validateForgotPassword.js';
+import { validateMail } from '../js/validate/validateRegister.js'; // const validate
 
 
 

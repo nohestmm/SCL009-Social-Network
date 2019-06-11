@@ -1,5 +1,10 @@
 import { templateHome, userInvalid } from "../views/templateHome.js";
 export let name, email;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 99e999cb3b81e1166787ec90a4cd366d0212dc76
 
 //Todas las funciones de registro e inicio de sesión de firebase
 
