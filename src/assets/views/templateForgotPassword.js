@@ -11,16 +11,17 @@ export const templateForgotPassword= () => {
   
     document.getElementById('root').innerHTML = `
     <div class="first-screen">
-    <div class="container-login">
-    <h1>Recupera tu contraseña :)</h1>
+    <div class="container-login"> 
+    <div class="content-login">  
+    <h1>Recuperar contraseña</h1>
     <p>No te preocupes amiga, puedes hacerlo aquí!<p>
-    <input class="form" type="text" id="email-reset" name="email" placeholder="Ingresa tu correo" required>
     <p id="error-message"></p>
-  <button id="btn-send">Enviar</button>
-  <button id ="btn-back-password"> Regresar</button>
-  
-    <div>
-     <div>
+    <input class="form" type="text" id="email-reset" name="email" placeholder="Ingresa tu correo" required>
+   <button class= "btn-send" id="btn-send">Enviar</button>
+  <button class ="btn-back-password" id ="btn-back-password">Regresar</button>
+  </div>
+    </div>
+     </div>
                                                 `
    
 document.getElementById('btn-send').addEventListener('click', () => {

@@ -12,26 +12,25 @@ export const templateHome = () => {
   document.getElementById('root').innerHTML = `
   <div class="first-screen">
   <div class="container-login">
-  <h1>Iniciar sesión</h1>
-  <input class="form" type="text" id="email2" name="email" placeholder="Ingresa tu correo" required>
-  <input class="form" type="password" id="password2" name="password" placeholder="Ingresa tu contraseña" required>
-  
-  <button class="btn-login" id="sign-in" type="submit">INICIAR SESIÓN</button>
-  <p id="error-message"></p>
-  <h3>¿No tienes cuenta?</h3>
-  <div>
-<button id="btn-about">Regístrate aquí</button>
-<h3>¿Olvidaste tu contraseña?</h3>
-<button id="btn-reset">Pincha aquí</button>
-</div>
-  <div>
-<div class="icons">
-  <button id="btn-google"  ><img class = "icon" src='../assets/img/google.ico' alt="google">Inicia sesión con Google</button>
-  <button id="btn-facebook"><img class = "icon" src='../assets/img/facebook.ico' alt="facebook">Inicia sesión con Facebook</button>
- 
-</div>
-   
-   <div>
+      <div class="header-login">
+          <img class="logo-login" src="./assets/img/logo.png">
+          <h1>No More</h1>
+          
+      </div>
+      <div class="content-login">
+          <p id="error-message"></p>
+          <input class="form" type="text" id="email2" name="email" placeholder="Ingresa tu correo" required>
+          <input class="form" type="password" id="password2" name="password" placeholder="Ingresa tu contraseña" required>
+          <button class="btn-login" id="sign-in" type="submit">INICIAR SESIÓN</button>
+          <button class="btn-google" id="btn-google"><img class = "icon" src='../assets/img/btn-google.png' alt="google">Inicia sesión con Google</button>
+      </div>
+      <div class="footer-login">
+          <a id="btn-reset">¿Olvidaste tu contraseña?</a>
+          <span>¿No tienes cuenta? <a id="btn-about">Regístrate</a></span>
+
+      </div>
+     <div>
+      <div>
                                               `
 //enlace a registro
   document.getElementById('btn-about').addEventListener('click', () => {
@@ -73,13 +72,6 @@ document.getElementById('btn-google').addEventListener('click',() =>{
   googleAuth();
 
 });
-
-document.getElementById('btn-facebook').addEventListener('click',() =>{
-
-  facebookAuth();
-
-});
-
 
   }
 

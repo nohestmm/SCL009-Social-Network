@@ -5,14 +5,49 @@
 }
 
 body {
-    background-image: linear-gradient(to left, #e9a1d3, #d682bb, #c262a2, #af408a, #9b1372);
+    background-color: ghostwhite;
 }
 
-header {
-    font-family: 'El Messiri';
+.header-login {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+}
+
+h1,
+h6 {
+    font-family: 'El Messiri';
+    justify-content: center;
     margin-top: 10px;
+}
+
+.form {
+    font-size: 0.9rem;
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #efefef;
+}
+
+.btn-login,
+.btn-google,
+.btn-register,
+.btn-back,
+.btn-send,
+.btn-back-password {
+    width: 87%;
+    height: 40px;
+    padding: 6px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #efefef;
+    background: #B52C72;
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
 }
 
 footer {
@@ -22,73 +57,42 @@ footer {
 }
 
 .first-screen {
-    margin: auto;
-    width: 70%;
-    max-width: 500px;
-    background: rgba(202, 49, 143, 0.74);
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background: rgba(202, 49, 143, 0.74);
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 30px;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
     font-family: 'El Messiri';
 }
 
-.form,
-.btn-login,
-#btn-google,
-#btn-facebook,
-#register-here,
-#btn-back,
-#btn-send,
-#btn-back-password,
-#btn-about,
-#btn-reset {
-    display: block;
-    padding: 10px;
+.container-login {
+    max-width: 350px;
+    border: 1px solid #e6e6e6;
     width: 100%;
-    margin: 15px 0;
-    font-size: 20px;
-    border: 0;
-    cursor: pointer;
-    border-radius: 15px;
-    margin-bottom: 0;
+    background-color: #fff;
 }
 
-#btn-google,
-#btn-facebook,
-#register-here,
-.btn-login,
-#btn-back,
-#btn-about,
-#btn-back,
-#btn-send,
-#btn-back-password,
-#btn-reset {
-    font-size: 15px;
-    background-color: rgba(214, 132, 153, 0.74);
+.content-login {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
 }
 
-.form,
-.btn-login,
-#btn-google,
-#btn-facebook:hover {
-    opacity: 1;
-}
-
-.form,
-.btn-login,
-#btn-google,
-#btn-facebook:active {
-    transform: scale(0.95);
+.footer-login {
+    margin: 10% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .icon {
     width: 25px;
     height: 25px;
+}
+
+.logo-login {
+    max-width: 50px;
+    width: 100%;
+    height: 50px;
 }

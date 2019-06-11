@@ -7,17 +7,21 @@ import { validateRegister, validateMail } from '/assets/js/validate/validateRegi
 //event =0;
 
 export const templateAbout = () => {
-  document.getElementById('root').innerHTML = `<div class="first-screen">
-  <h1>¡Crea tu cuenta ahora!</h1>
+  document.getElementById('root').innerHTML = `
+  <div class="first-screen">
+  <div class="container-login">
+      <div class= "content-login">
+    <h1>¡Crea tu cuenta ahora!</h1>
+    <p id = "password-error"></p>
   <input class="form" type="text" id="name" name="name" placeholder="Alias" required>
   <input class="form" type="text" id="email" name="email" placeholder="Ingresa tu correo" required>
    <input class="form" type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
    <input type="hidden" id="id">
-   <p id = "password-error"></p>
-   <button id="register-here" type = "button">Registrar Usuario</button>
-   <button id ="btn-back"> Regresar</button>
-  
-   <div>
+  <button class="btn-register" id="register-here" type = "button">Registrar Usuario</button>
+   <button class="btn-back" id ="btn-back"> Regresar</button>
+  </div>
+   </div>
+   </div>
                                               `
 
 
