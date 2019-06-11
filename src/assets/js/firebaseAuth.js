@@ -1,10 +1,6 @@
-//import { templateProject } from "../views/templateProject.js";
 import { templateHome, userInvalid } from "../views/templateHome.js";
 export let name, email;
-//import { event } from "../views/templateHome.js";
-//import { templateAbout } from "../views/templateAbout.js";
 
-//import { templateForgotPassword } from "../views/templateForgotPassword.js";
 
 
 //Todas las funciones de registro e inicio de sesión de firebase
