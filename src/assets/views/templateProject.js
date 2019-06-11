@@ -1,7 +1,7 @@
 import { name, email } from '../js/firebaseAuth.js';
 import { templateHome } from './templateHome.js';
 import { observer } from '../js/firebaseAuth.js';
-import { signOut } from '/assets/js/firebaseAuth.js';
+import { signOut } from '../js/firebaseAuth.js';
 
 
 
