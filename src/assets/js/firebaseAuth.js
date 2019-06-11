@@ -1,14 +1,34 @@
 import { templateHome, userInvalid } from "../views/templateHome.js";
-export let name, email;
+//export let name, email;
 
-
+const saveUsers = (name, email, password,uid) => {
+  let db = firebase.firestore();
+  db.collection("users").add({
+    uid: uid,
+    name: name,
+    email: email,
+    password: password
+ 
+ })
+       .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+          console.error("Error adding document: ", error);
+    });
+ }
 
 //Todas las funciones de registro e inicio de sesión de firebase
-export const register = (email, password) => {
+export const register = (name, email, password) => {
 firebase.auth().createUserWithEmailAndPassword(email, password)
 .then(() =>{
-    verifyAccount();
-    //observer();
+
+let user = firebase.auth().currentUser;
+let uid = user.uid;
+console.log(uid);
+verifyAccount();
+saveUsers(name, email, password, uid);
+//observer();
     window.location.hash = '#/home'; 
     
 })
@@ -149,12 +169,14 @@ export const facebookAuth =() =>{
 //Observer
 export const observer = () => {
 
-  firebase.auth().onAuthStateChanged( user=> {
+  firebase.auth().onAuthStateChanged( user => {
 
     if (user) { 
-      name = user.displayName;
+      let name = user.displayName;
       console.log(name);
-      email = user.email;
+      let email = user.email;
+      console.log(email);
+     let uid = user.uid;
       console.log(email);
 
 
