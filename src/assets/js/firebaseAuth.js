@@ -1,21 +1,34 @@
 import { templateHome, userInvalid } from "../views/templateHome.js";
 //export let name, email;
 
-
+const saveUsers = (name, email, password,uid) => {
+  let db = firebase.firestore();
+  db.collection("users").add({
+    uid: uid,
+    name: name,
+    email: email,
+    password: password
+ 
+ })
+       .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+          console.error("Error adding document: ", error);
+    });
+ }
 
 //Todas las funciones de registro e inicio de sesión de firebase
-
-//Registro de usuario
 export const register = (name, email, password) => {
-  //let nameUser= name;
 firebase.auth().createUserWithEmailAndPassword(email, password)
-.then((data) =>{
-  console.log(data)
-  console.log(data.user)
-  //userData();
-    verifyAccount();
-    saveUsers(data.user.uid, nameUser, email, password);
-    //observer();
+.then(() =>{
+
+let user = firebase.auth().currentUser;
+let uid = user.uid;
+console.log(uid);
+verifyAccount();
+saveUsers(name, email, password, uid);
+//observer();
     window.location.hash = '#/home'; 
     
 })
@@ -113,13 +126,14 @@ export const googleAuth = () =>{
 //Observer
 export const observer = () => {
 
-  firebase.auth().onAuthStateChanged( user=> {
+  firebase.auth().onAuthStateChanged( user => {
 
     if (user) { 
-      console.log(user);
-      name = user.displayName;
+      let name = user.displayName;
       console.log(name);
-      email = user.email;
+      let email = user.email;
+      console.log(email);
+     let uid = user.uid;
       console.log(email);
      emailVerified = user.emailVerified;
      console.log(emailVerified);
@@ -151,21 +165,4 @@ export const signOut = () => {firebase.auth().signOut()
     // An error happened.
   });
 
-}
-
-const saveUsers = (uid, name, email, password) => {
-  let db = firebase.firestore();
-  db.collection("users").add({
-    uid: uid,
-    name: name,
-    email: email,
-    password: password
-  
- })
-       .then(function(docRef) {
-          console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function(error) {
-          console.error("Error adding document: ", error);
-    });
 }

@@ -29,6 +29,7 @@ export const templateAbout = () => {
     let nameValue= document.getElementById('name').value;
     let emailValue = document.getElementById('email').value;
     let passwordValue = document.getElementById('password').value;
+    let uidValue = document.getElementById('id').value;
     
 if (validateRegister(nameValue, emailValue, passwordValue)) {
   if (passwordValue.length <6 && passwordValue.length >0){
@@ -46,18 +47,14 @@ if (validateRegister(nameValue, emailValue, passwordValue)) {
  } 
  else if (validateMail(emailValue)) {
   document.getElementById('password-error').innerHTML="Formato de correo inválido";
+  document.getElementById('name').value='';
   document.getElementById('email').value='';
   document.getElementById('password').value='';
 
 }
 else {
-  register(nameValue, emailValue, passwordValue);
-  // document.getElementById('name').style.display="none";
-  //       document.getElementById('email').style.display="none";
-  //       document.getElementById('password').style.display="none";
-  // document.getElementById('register-here').style.display="none";
-  // document.getElementById('password-error').innerHTML="Registro exitoso";
-
+  register(nameValue,emailValue, passwordValue,uidValue);
+  
 }
     
     //templateHome();

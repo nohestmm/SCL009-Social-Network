@@ -11,7 +11,7 @@ import { signOut } from '../js/firebaseAuth.js';
 export const templateProject = () => {
   observer();
   document.getElementById('root').innerHTML = `<p>Template Project</p>
-  <p>${name}</p> <p>${email}</p>
+  
   <p id="message"></p>
                                               
   
