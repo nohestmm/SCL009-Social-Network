@@ -1,33 +1,11 @@
 {
-    "env": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      "browser": true,
-      "node": true,
-      "es6": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module"
-    }
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
   }
-=======
-        "browser": true,
-        "node": true,
-        "es6": true
-=======
-      "browser": true,
-      "node": true,
-      "es6": true
->>>>>>> f311bdcbc317a9059ada149f0aa51b919e60012e
-    },
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module"
-    }
-<<<<<<< HEAD
 }
->>>>>>> c9aad88c5ca6b5e0bd30c6c5b3fd01a1c9f0ff2c
-=======
-  }
->>>>>>> f311bdcbc317a9059ada149f0aa51b919e60012e

@@ -1,14 +1,20 @@
-//import { templateProject } from "../views/templateProject.js";
 import { templateHome, userInvalid } from "../views/templateHome.js";
 export let name, email;
-//import { event } from "../views/templateHome.js";
-//import { templateAbout } from "../views/templateAbout.js";
-
-//import { templateForgotPassword } from "../views/templateForgotPassword.js";
-
 
 //Todas las funciones de registro e inicio de sesión de firebase
-export const register = (email, password) => {
+
+//Registro de usuario
+export const register = (name, email, password) => {
+  db.collection("users").add({
+    name: name,
+    email: email
+ })
+       .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+          console.error("Error adding document: ", error);
+    });
 firebase.auth().createUserWithEmailAndPassword(email, password)
 .then(() =>{
   //userData();
@@ -25,6 +31,7 @@ let errorMessage = error.message;
 });
 }
 
+//Iniciar sesión
 export const login = (mail, pass) => {
   firebase.auth().signInWithEmailAndPassword(mail, pass)
 .then(() => { 
@@ -40,25 +47,11 @@ export const login = (mail, pass) => {
     templateHome();
 
     userInvalid(errorCode);
-   // errorLogin();
-   /*if (errorCode === 'auth/wrong-password') {
-    document.getElementById('error-message').innerHTML="Contraseña inválida";
-   } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
-     document.getElementById('error-message').innerHTML="Usuario no registrado";
-   }*/
-  //  if (errorCode === 'auth/wrong-password') {
-
-  //   alert("Contraseña inválida! ¡vuelve a intentar!")
-  //  } else if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found') {
-  //    alert("Usuario no registrado")
-  //  }
-  //   console.log(errorCode)                                                                                                                                                          
-  //   console.log(errorMessage)
   
-   
   });
 }
 
+//Verificar cuenta
 const verifyAccount = () => { //envía correo de verificación al user, funcionando OK
 let user= firebase.auth().currentUser;
 
@@ -70,9 +63,8 @@ user.sendEmailVerification().then(() =>{
  // alert("ya estás registrado")
 });
 }
-//export const logGoogle
-//export const logFacebook
 
+//Resetear contraseña
 export const resetPassword = (email) => {
   let auth = firebase.auth();
   let emailAddress = email;
@@ -89,14 +81,7 @@ userInvalid(errorCode);
   });
 }
 
-/*export const errorLogin = (error) => {
-  if (error === 'auth/wrong-password') {
-    return "Contraseña inválida";
-   } else if (error === 'auth/invalid-email'  || error === 'auth/user-not-found') {
-     return "Usuario no registrado";
-   }
-}*/
-
+//Inicio de sesión con Google
 export const googleAuth = () =>{
 
   let provider = new firebase.auth.GoogleAuthProvider();
@@ -128,28 +113,6 @@ export const googleAuth = () =>{
 
 }
 
-export const facebookAuth =() =>{
-
-  let provider = new firebase.auth.FacebookAuthProvider();
-
-  firebase.auth().signInWithPopup(provider).then(result =>{
-    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    // ...
-  }).catch(error => {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
-  });
-
-}
 
 //Observer
 export const observer = () => {
@@ -157,10 +120,13 @@ export const observer = () => {
   firebase.auth().onAuthStateChanged( user=> {
 
     if (user) { 
+      console.log(user);
       name = user.displayName;
       console.log(name);
       email = user.email;
       console.log(email);
+     emailVerified = user.emailVerified;
+     console.log(emailVerified);
 
 
       window.location.hash = '#/project'; 
@@ -171,11 +137,14 @@ export const observer = () => {
  
     
    else{
+    
 // User is signed out.
 window.location.hash="";
 }
     });
 }
+
+//Cerrar sesión
 export const signOut = () => {firebase.auth().signOut()
 .then(() =>{
   templateHome();
@@ -193,13 +162,27 @@ export const signOut = () => {firebase.auth().signOut()
 //   let namew = document.getElementById('name').value;
 //   let emailw = document.getElementById('email').value;
 
-//   db.collection("users").add({
-//      name: namew,
-//      email: emailw
-//   })
-//         .then(function(docRef) {
-//            console.log("Document written with ID: ", docRef.id);
-//      })
-//      .catch(function(error) {
-//            console.error("Error adding document: ", error);
-//      });
+  db.collection("users").add({
+     name: name,
+     email: email
+  })
+        .then(function(docRef) {
+           console.log("Document written with ID: ", docRef.id);
+     })
+     .catch(function(error) {
+           console.error("Error adding document: ", error);
+     });
+const frog = () => {
+ let user = firebase.auth().currentUser;
+let name, email, photoUrl, uid, emailVerified;
+
+if (user != null) {
+  name = user.displayName;
+  email = user.email;
+  photoUrl = user.photoURL;
+  emailVerified = user.emailVerified;
+  uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                   // this value to authenticate with your backend server, if
+                   // you have one. Use User.getToken() instead.
+}
+}
