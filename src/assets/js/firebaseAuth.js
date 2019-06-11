@@ -1,29 +1,20 @@
 import { templateHome, userInvalid } from "../views/templateHome.js";
-export let name, email;
-<<<<<<< HEAD
-=======
+//export let name, email;
 
 
->>>>>>> 99e999cb3b81e1166787ec90a4cd366d0212dc76
 
 //Todas las funciones de registro e inicio de sesión de firebase
 
 //Registro de usuario
 export const register = (name, email, password) => {
-  db.collection("users").add({
-    name: name,
-    email: email
- })
-       .then(function(docRef) {
-          console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function(error) {
-          console.error("Error adding document: ", error);
-    });
+  //let nameUser= name;
 firebase.auth().createUserWithEmailAndPassword(email, password)
-.then(() =>{
+.then((data) =>{
+  console.log(data)
+  console.log(data.user)
   //userData();
     verifyAccount();
+    saveUsers(data.user.uid, nameUser, email, password);
     //observer();
     window.location.hash = '#/home'; 
     
@@ -162,32 +153,19 @@ export const signOut = () => {firebase.auth().signOut()
 
 }
 
-//  const userData = () => {
-//   let db = firebase.firestore();
-//   let namew = document.getElementById('name').value;
-//   let emailw = document.getElementById('email').value;
-
+const saveUsers = (uid, name, email, password) => {
+  let db = firebase.firestore();
   db.collection("users").add({
-     name: name,
-     email: email
-  })
-        .then(function(docRef) {
-           console.log("Document written with ID: ", docRef.id);
-     })
-     .catch(function(error) {
-           console.error("Error adding document: ", error);
-     });
-const frog = () => {
- let user = firebase.auth().currentUser;
-let name, email, photoUrl, uid, emailVerified;
-
-if (user != null) {
-  name = user.displayName;
-  email = user.email;
-  photoUrl = user.photoURL;
-  emailVerified = user.emailVerified;
-  uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                   // this value to authenticate with your backend server, if
-                   // you have one. Use User.getToken() instead.
-}
+    uid: uid,
+    name: name,
+    email: email,
+    password: password
+  
+ })
+       .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+          console.error("Error adding document: ", error);
+    });
 }

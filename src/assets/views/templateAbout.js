@@ -51,7 +51,7 @@ if (validateRegister(nameValue, emailValue, passwordValue)) {
 
 }
 else {
-  register(emailValue, passwordValue);
+  register(nameValue, emailValue, passwordValue);
   // document.getElementById('name').style.display="none";
   //       document.getElementById('email').style.display="none";
   //       document.getElementById('password').style.display="none";
