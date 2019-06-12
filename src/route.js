@@ -1,14 +1,14 @@
 //import todas las vistas
-import { observer } from './assets/js/firebaseAuth.js';
-import { templateAbout } from './assets/views/templateAbout.js';
+
+import { templateRegister } from './assets/views/templateRegister.js';
 import { templateProject } from './assets/views/templateProject.js';
-import { templateHome } from './assets/views/templateHome.js';
+import { templateLogin } from './assets/views/templateLogin.js';
 import { templateForgotPassword } from './assets/views/templateForgotPassword.js';
 
 
 
 export const changeRoute = (hash) => {
-  if (hash === '#/about' || hash === '#/project' || hash === '#/home' || hash === '#/forgotpassword'|| hash === '' || hash === '#/' || hash === '/#') {
+  if (hash === '#/register' || hash === '#/project' || hash === '#/login' || hash === '#/forgotpassword'|| hash === '' || hash === '#/' || hash === '/#') {
     return showTemplate(hash)
   }
   return showTemplate(hash)
@@ -17,26 +17,26 @@ export const changeRoute = (hash) => {
 // segunda función showTemplate(hash)
 
 const showTemplate = (hash) => {
-  // #/about
-  const router = hash.substring(2); // home about project
+  // #/register
+  const router = hash.substring(2); // login register project
   const containerRoot = document.getElementById('root');
   containerRoot.innerHTML = '';
 
   switch (router) {
-    case 'about':
-      templateAbout();
+    case 'register':
+      templateRegister();
       break;
     case 'project':
       templateProject();
       break;
-    case 'home':
-      templateHome();
+    case 'login':
+      templateLogin();
       break;
     case 'forgotpassword':
       templateForgotPassword();
     break;
     case '':
-      templateHome();
+      templateLogin();
       break;
     default:
       containerRoot.innerHTML = `<h1>Error 404</h1>`
