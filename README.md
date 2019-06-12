@@ -1,4 +1,5 @@
 ![NoMore](src/assets/img/logo.png) 
+
 **NoMore!** :raising_hand:
 En la sociedad actual, el empoderamiento femenino está ganando terreno cada día. Cada vez más existen más instancias donde las mujeres comenzamos a tener más oportunidades que antes estaban sesgadas para nosotras. Es una lucha que se seguirá desarrollando en los nuevos tiempos, pero también es innegable que aún faltan muchos vacíos que cubrir, sobre todo en el aspecto de la Violencia de género. 
 
@@ -9,8 +10,9 @@ Se espera que esta red social, pueda tener un impacto positivo en la vida de las
 **Planificación**
 La planificación de esta red social se dividió en tres springs de una semana cada uno, la cual se puede visualizar en [Trello](https://trello.com/b/4FNgTDLU/creando-una-red-social), en la cual la primera semana se tuvo el prototipo de baja fidelidad que fue mejorando con las iteraciones de nuestras compañeras. Posterior a esto, se realizó el prototipo de alta fidelidad en [Figma](https://www.figma.com/file/0IPC8043071bzon4KGKWNhZa/NoMoreCommunity?node-id=0%3A1). Durante la planificación se realizaron las historias de usuario con sus criterios de aceptación y definición de terminado, para poder avanzar de forma ordenada.
 
-![Prototipo de baja fidelidad](src/assets/img/PBF.JPG)
-![Prototipo de baja fidelidad](src/assets/img/PBF1.JPG) 
+![Prototipo de baja fidelidad](src/assets/img/PBF.jpg)
+
+![Prototipo de baja fidelidad](src/assets/img/PBF1.jpg) 
 
 **Test usabilidad**
 [user 1]
