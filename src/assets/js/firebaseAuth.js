@@ -30,8 +30,9 @@ export const register = (name, email, password) => {
       let uid = user.uid;
       console.log(uid);
       verifyAccount();
+      observer();
       saveUsers(name, email, password, uid);
-      //observer();
+     
       window.location.hash = '#/login';
 
     })
@@ -49,16 +50,18 @@ export const login = (mail, pass) => {
   firebase.auth().signInWithEmailAndPassword(mail, pass)
     .then(() => {
       observer()
-      //let user = firebase.auth().currentUser;
+      let user = firebase.auth().currentUser;
 
-      // if (user.emailVerified) {
-      //   console.log(user.emailVerified)
-      //   window.location.hash = '#/project';
-      // }
-      // else {
-      //   window.location.hash = '#/login';
-      //   emailVerify(user.emailVerified)
-      // }
+      if (user.emailVerified) {
+        console.log(user.emailVerified)
+        //templateProject();
+        window.location.hash = '#/project';
+      }
+      else {
+        signOut()
+        //window.location.hash = '#/login';
+        //emailVerify(user.emailVerified)
+      }
     })
     .catch(error => {
       // Handle Errors here.
@@ -140,28 +143,22 @@ export const googleAuth = () => {
 export const observer = () => {
 
   firebase.auth().onAuthStateChanged(user => {
-   // let user = firebase.auth().currentUser;
-    if (user.emailVerified) {
-      let name = user.displayName;
-      console.log(name);
-      let email = user.email;
-      console.log(email);
-      let uid = user.uid;
-      console.log(email);
-      
+   //let user = firebase.auth().currentUser;
+    if (user === null) {
+      return window.location.hash = "";
 
-
-      window.location.hash = '#/project';
+      //window.location.hash = '#/project';
       // User is signed in.
-
-
-    }
-
-
+    } if (!user.emailVerified) {
+      return window.location.hash = "";
+    } 
+    
     else {
-      emailVerify(user.emailVerified)
+  
+  window.location.hash = "#/project";
+      //emailVerify(emailVerified)
       // User is signed out.
-      window.location.hash = "";
+      
     }
   });
 }

@@ -98,8 +98,8 @@ export const userInvalid =(errorCode) =>{
   
 }
 
-export const emailVerify = (user) =>{
-  if (!user.emailVerified) {
+export const emailVerify = (emailVerified) =>{
+  if (!emailVerified) {
     document.getElementById('error-message').innerHTML = "¡Verifica tu cuenta!";
   }
 }

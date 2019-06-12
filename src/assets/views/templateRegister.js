@@ -54,11 +54,11 @@ if (validateRegister(nameValue, emailValue, passwordValue)) {
 }
 else {
   register(nameValue,emailValue, passwordValue,uidValue);
-  
+  templateLogin();
+  window.location.hash = '#/login';
 }
     
-    //templateLogin();
-    //window.location.hash = '#/login';
+   
      });
   document.getElementById('btn-back').addEventListener('click',()=>{
     templateLogin();
