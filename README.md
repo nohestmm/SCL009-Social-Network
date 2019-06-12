@@ -1,3 +1,25 @@
+![NoMore](src/assets/img/logo.png) 
+**NoMore!** :raising_hand:
+En la sociedad actual, el empoderamiento femenino está ganando terreno cada día. Cada vez más existen más instancias donde las mujeres comenzamos a tener más oportunidades que antes estaban sesgadas para nosotras. Es una lucha que se seguirá desarrollando en los nuevos tiempos, pero también es innegable que aún faltan muchos vacíos que cubrir, sobre todo en el aspecto de la Violencia de género. 
+
+Las estadísticas muestran que estas cifras no han disminuído, femicidios, violencia psicológica, física, sexual, monetaria, entre otras de las cuales son víctimas. Partiendo esta realidad, respondiendo a la necesidad de la creación de una red de apoyo para la comunidad, nace **NoMore!** :raising_hand:, la cual es una red social enfocada a prestarle apoyo y contención a mujeres que han sufrido algún tipo de violencia, de manera que puedan compartir sus experiencias en un entorno donde reine la confianza y la empatía, ya que somos conscientes que en estas situaciones, el apoyo es fundamental, venga de donde venga.
+
+Se espera que esta red social, pueda tener un impacto positivo en la vida de las afectadas, tal como se mencionó anteriormente, generando una red de apoyo positiva para que puedan salir de estas situaciones y tengan una mejor calidad de vida.
+
+**Planificación**
+La planificación de esta red social se dividió en tres springs de una semana cada uno, la cual se puede visualizar en [Trello](https://trello.com/b/4FNgTDLU/creando-una-red-social), en la cual la primera semana se tuvo el prototipo de baja fidelidad que fue mejorando con las iteraciones de nuestras compañeras. Posterior a esto, se realizó el prototipo de alta fidelidad en [Figma](https://www.figma.com/file/0IPC8043071bzon4KGKWNhZa/NoMoreCommunity?node-id=0%3A1). Durante la planificación se realizaron las historias de usuario con sus criterios de aceptación y definición de terminado, para poder avanzar de forma ordenada.
+
+![Prototipo de baja fidelidad](src/assets/img/PBF.JPG)
+![Prototipo de baja fidelidad](src/assets/img/PBF1.JPG) 
+
+**Test usabilidad**
+[user 1]
+[user 2]
+[user 3]
+
+**Modo de uso**
+Esta aplicación se intentó realizar lo más minimalista posible, sin dejar de lado los detalles visuales que hagan la navegación más rápida, intuitiva y agradable para el usuario. En la primera pantalla se puede visualizar los campos de inicio de sesión con email y contraseña, además del inicio de sesión con Google, posteriormente se puede visualizar enlaces para el registro y recuperación de contraseña. Pueden acceder a NoMore! desde acá [link deploy here]
+
 **HISTORIA DE USUARIO N°1**
 
 Yo como usuaria de **NoMoreCommunity** QUIERO registrarme en la APP, mediante correo electrónico PARA poder usar la App
