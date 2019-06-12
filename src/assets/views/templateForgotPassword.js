@@ -1,4 +1,4 @@
-import { templateHome } from './templateHome.js';
+import { templateLogin } from './templateLogin.js';
 import { resetPassword } from '../js/firebaseAuth.js'; // const reset password
 import { validateForgotPassword } from '../js/validate/validateForgotPassword.js';
 import { validateMail } from '../js/validate/validateRegister.js'; // const validate
@@ -45,15 +45,15 @@ document.getElementById('btn-send').addEventListener('click', () => {
   
     resetPassword(email)
     document.getElementById('error-message').innerHTML="Correo enviado exitosamente";
-//   templateHome();
-// window.location.hash = '#/home';
+//   templateLogin();
+// window.location.hash = '#/login';
    
  
   }
   });
 
   document.getElementById('btn-back-password').addEventListener('click',()=>{
-  templateHome();
+  templateLogin();
     window.location.hash = '#/home';
    
     });

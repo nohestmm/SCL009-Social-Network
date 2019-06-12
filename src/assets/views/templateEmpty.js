@@ -1,4 +1,4 @@
-import { templateAbout } from './templateAbout.js';
+import { templateRegister } from './templateRegister.js';
 
 export const templateEmpty= () => {
     document.getElementById('root').innerHTML = `
@@ -12,8 +12,8 @@ export const templateEmpty= () => {
                                                 `
   //enlace a registro
     document.getElementById('btn-about').addEventListener('click', () => {
-      templateAbout();
-      window.location.hash = '#/about';
+      templateRegister();
+      window.location.hash = '#/register';
     })
     //si se loggea con éxito, pasar a muro
 

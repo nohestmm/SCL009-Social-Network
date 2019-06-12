@@ -1,97 +1,111 @@
-import { templateHome, userInvalid } from "../views/templateHome.js";
+import { templateLogin, userInvalid, emailVerify } from "../views/templateLogin.js";
 //export let name, email;
 
-const saveUsers = (name, email, password,uid) => {
+// Guardar usuarios registrados en firestore
+const saveUsers = (name, email, password, uid) => {
   let db = firebase.firestore();
   db.collection("users").add({
     uid: uid,
     name: name,
     email: email,
     password: password
- 
- })
-       .then(function(docRef) {
-          console.log("Document written with ID: ", docRef.id);
+
+  })
+    .then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
     })
-    .catch(function(error) {
-          console.error("Error adding document: ", error);
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
     });
- }
-
-//Todas las funciones de registro e inicio de sesión de firebase
-export const register = (name, email, password) => {
-firebase.auth().createUserWithEmailAndPassword(email, password)
-.then(() =>{
-
-let user = firebase.auth().currentUser;
-let uid = user.uid;
-console.log(uid);
-verifyAccount();
-saveUsers(name, email, password, uid);
-//observer();
-    window.location.hash = '#/home'; 
-    
-})
-.catch(error => {
-// Handle Errors here.
-let errorCode = error.code;
-userInvalid(errorCode);
-let errorMessage = error.message;
-});
 }
 
-//Iniciar sesión
+//Todas las funciones de registro e inicio de sesión de firebase
+
+//Register
+export const register = (name, email, password) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(() => {
+
+      let user = firebase.auth().currentUser;
+      let uid = user.uid;
+      console.log(uid);
+      verifyAccount();
+      saveUsers(name, email, password, uid);
+      //observer();
+      window.location.hash = '#/login';
+
+    })
+    .catch(error => {
+      // Handle Errors here.
+      let errorCode = error.code;
+      userInvalid(errorCode);
+      let errorMessage = error.message;
+    });
+}
+
+//Login
+
 export const login = (mail, pass) => {
   firebase.auth().signInWithEmailAndPassword(mail, pass)
-.then(() => { 
-  observer();
-  //document.getElementById("error-message").innerHTML= "usuario registrado ";
-//templateProject()
-  window.location.hash = '#/project'; 
-})
-.catch(error =>{
-    // Handle Errors here.
-   let errorCode = error.code;
-    let errorMessage = error.message;
-    templateHome();
+    .then(() => {
+      observer()
+      //let user = firebase.auth().currentUser;
 
-    userInvalid(errorCode);
-  
+      // if (user.emailVerified) {
+      //   console.log(user.emailVerified)
+      //   window.location.hash = '#/project';
+      // }
+      // else {
+      //   window.location.hash = '#/login';
+      //   emailVerify(user.emailVerified)
+      // }
+    })
+    .catch(error => {
+      // Handle Errors here.
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      templateLogin();
+
+      userInvalid(errorCode);
+
+
+    });
+}
+
+// Verificar cuenta
+const verifyAccount = () => { //envía correo de verificación al user, funcionando OK
+  let user = firebase.auth().currentUser;
+
+  user.sendEmailVerification().then(() => {
+    //alert("revisa tu bandeja de entrada")
+    // Email sent.
+  }).catch(error => {
+    // An error happened.
+    // alert("ya estás registrado")
   });
 }
 
-//Verificar cuenta
-const verifyAccount = () => { //envía correo de verificación al user, funcionando OK
-let user= firebase.auth().currentUser;
-
-user.sendEmailVerification().then(() =>{
-    //alert("revisa tu bandeja de entrada")
-  // Email sent.
-}).catch(error => {
-  // An error happened.
- // alert("ya estás registrado")
-});
-}
 
 //Resetear contraseña
+
 export const resetPassword = (email) => {
   let auth = firebase.auth();
   let emailAddress = email;
-  
+
   auth.sendPasswordResetEmail(emailAddress)
-  .then(() =>{
+    .then(() => {
 
-    
-  }).catch(error => {
 
-let errorCode = error.code;
-userInvalid(errorCode);
+    }).catch(error => {
 
-  });
+      let errorCode = error.code;
+      userInvalid(errorCode);
+
+    });
 }
 
-//Inicio de sesión con Google
-export const googleAuth = () =>{
+//Iniciar sesión con Google
+export const googleAuth = () => {
 
   let provider = new firebase.auth.GoogleAuthProvider();
 
@@ -103,7 +117,7 @@ export const googleAuth = () =>{
     var user = result.user;
     console.log(user);
 
-    window.location.hash = '#/project'; 
+    window.location.hash = '#/project';
     // ...
   }).catch(error => {
     // Handle Errors here.
@@ -122,44 +136,43 @@ export const googleAuth = () =>{
 
 }
 
-
 //Observer
 export const observer = () => {
 
-  firebase.auth().onAuthStateChanged( user => {
-
-    if (user) { 
+  firebase.auth().onAuthStateChanged(user => {
+   // let user = firebase.auth().currentUser;
+    if (user.emailVerified) {
       let name = user.displayName;
       console.log(name);
       let email = user.email;
       console.log(email);
-     let uid = user.uid;
+      let uid = user.uid;
       console.log(email);
-     emailVerified = user.emailVerified;
-     console.log(emailVerified);
+      
 
 
-      window.location.hash = '#/project'; 
-// User is signed in.
-    
+      window.location.hash = '#/project';
+      // User is signed in.
 
-    } 
- 
-    
-   else{
-    
-// User is signed out.
-window.location.hash="";
+
+    }
+
+
+    else {
+      emailVerify(user.emailVerified)
+      // User is signed out.
+      window.location.hash = "";
+    }
+  });
 }
-    });
-}
 
-//Cerrar sesión
-export const signOut = () => {firebase.auth().signOut()
-.then(() =>{
-  templateHome();
-  //document.getElementById("error-message").innerHTML= "Vuelve pronto ÑAÑAÑA";
- window.location.hash = '#/home';
+// cerrar sesión
+export const signOut = () => {
+  firebase.auth().signOut()
+  .then(() => {
+    templateLogin();
+    //document.getElementById("error-message").innerHTML= "Vuelve pronto ÑAÑAÑA";
+    window.location.hash = '#/login';
     // Sign-out successful.
   }).catch(error => {
     // An error happened.

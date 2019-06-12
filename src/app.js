@@ -16,7 +16,7 @@ export const firebaseInit = () => {
   firebase.initializeApp(firebaseConfig);
   
 // Initialize Cloud Firestore through Firebase
-let db = firebase.firestore();
+//let db = firebase.firestore();
 }
 
  //Initialize Cloud Firestore through Firebase

@@ -1,4 +1,4 @@
-import { templateHome } from './templateHome.js'; // login
+import { templateLogin } from './templateLogin.js'; // login
 import { register } from '../js/firebaseAuth.js';
 import { validateRegister } from '../js/validate/validateRegister.js'; // const validate
 import { validateMail } from '../js/validate/validateRegister.js';
@@ -6,7 +6,7 @@ import { validateMail } from '../js/validate/validateRegister.js';
 
 //event =0;
 
-export const templateAbout = () => {
+export const templateRegister = () => {
   document.getElementById('root').innerHTML = `
   <div class="first-screen">
   <div class="container-login">
@@ -57,21 +57,13 @@ else {
   
 }
     
-    //templateHome();
-    //window.location.hash = '#/home';
+    //templateLogin();
+    //window.location.hash = '#/login';
      });
   document.getElementById('btn-back').addEventListener('click',()=>{
-    templateHome();
-    window.location.hash = '#/home';
+    templateLogin();
+    window.location.hash = '#/login';
 
   });
 }
 
-// export const errorRegister =(errorCode) =>{
-
-//   if (errorCode === 'auth/email-already-in-use'){
-//     document.getElementById('password-error').innerHTML = "El correo ya existe";
-
-//   }
-
-// }
