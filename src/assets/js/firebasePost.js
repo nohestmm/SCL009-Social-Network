@@ -20,6 +20,7 @@
 
 
 
+
 export const createPost = () =>{ //funciona pero se duplican los post por user
     let db = firebase.firestore();
 let user = firebase.auth().currentUser;
