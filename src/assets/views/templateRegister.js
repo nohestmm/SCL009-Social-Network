@@ -12,7 +12,7 @@ export const templateRegister = () => {
   <div class="container-login">
       <div class= "content-login">
     <h1>¡Crea tu cuenta ahora!</h1>
-    <p id = "password-error"></p>
+    <p id = "error-message"></p>
   <input class="form" type="text" id="name" name="name" placeholder="Alias" required>
   <input class="form" type="text" id="email" name="email" placeholder="Ingresa tu correo" required>
    <input class="form" type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
@@ -33,11 +33,11 @@ export const templateRegister = () => {
     
 if (validateRegister(nameValue, emailValue, passwordValue)) {
   if (passwordValue.length <6 && passwordValue.length >0){
-    document.getElementById("password-error").innerHTML = "Contrasena de minimo 6 caracteres"; 
+    document.getElementById("error-message").innerHTML = "Contrasena de minimo 6 caracteres"; 
     }
   
     else {
-      document.getElementById("password-error").innerHTML = "Completa todos los campos requeridos"; 
+      document.getElementById("error-message").innerHTML = "Completa todos los campos requeridos"; 
   
    }
         document.getElementById('name').value='';
@@ -46,7 +46,7 @@ if (validateRegister(nameValue, emailValue, passwordValue)) {
 
  } 
  else if (validateMail(emailValue)) {
-  document.getElementById('password-error').innerHTML="Formato de correo inválido";
+  document.getElementById('error-message').innerHTML="Formato de correo inválido";
   document.getElementById('name').value='';
   document.getElementById('email').value='';
   document.getElementById('password').value='';
@@ -54,8 +54,8 @@ if (validateRegister(nameValue, emailValue, passwordValue)) {
 }
 else {
   register(nameValue,emailValue, passwordValue,uidValue);
-  templateLogin();
-  window.location.hash = '#/login';
+  // templateLogin();
+  // window.location.hash = '#/login';
 }
     
    

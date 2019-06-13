@@ -28,7 +28,7 @@ export const register = (name, email, password) => {
 
       let user = firebase.auth().currentUser;
       let uid = user.uid;
-      console.log(uid);
+      //console.log(uid);
       verifyAccount();
       observer();
       saveUsers(name, email, password, uid);
@@ -53,7 +53,7 @@ export const login = (mail, pass) => {
       let user = firebase.auth().currentUser;
 
       if (user.emailVerified) {
-        console.log(user.emailVerified)
+        //console.log(user.emailVerified)
         //templateProject();
         window.location.hash = '#/project';
       }
@@ -114,25 +114,25 @@ export const googleAuth = () => {
 
   firebase.auth().signInWithPopup(provider).then(result => {
     // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
+    let token = result.credential.accessToken;
     console.log(token);
     // The signed-in user info.
-    var user = result.user;
+    let user = result.user;
     console.log(user);
 
     window.location.hash = '#/project';
     // ...
   }).catch(error => {
     // Handle Errors here.
-    var errorCode = error.code;
+    let errorCode = error.code;
     console.log(errorCode);
-    var errorMessage = error.message;
+    let errorMessage = error.message;
     console.log(errorMessage);
     // The email of the user's account used.
-    var email = error.email;
+    let email = error.email;
     console.log(email);
     // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
+    let credential = error.credential;
     console.log(credential);
     // ...
   });

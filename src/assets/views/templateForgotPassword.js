@@ -54,7 +54,7 @@ document.getElementById('btn-send').addEventListener('click', () => {
 
   document.getElementById('btn-back-password').addEventListener('click',()=>{
   templateLogin();
-    window.location.hash = '#/home';
+    window.location.hash = '#/login';
    
     });
 

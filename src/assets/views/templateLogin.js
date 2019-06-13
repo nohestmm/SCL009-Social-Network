@@ -87,11 +87,14 @@ export const userInvalid =(errorCode) =>{
 
   if (errorCode === 'auth/invalid-email'  || errorCode === 'auth/user-not-found'){
     document.getElementById('error-message').innerHTML = "Usuario no registrado";
-
+    document.getElementById('email-reset').value='';
+    
   }
   if (errorCode === 'auth/email-already-in-use'){
-    document.getElementById('password-error').innerHTML = "El correo ya existe";
-
+    document.getElementById('error-message').innerHTML = "El correo ya existe";
+    document.getElementById('name').value='';
+    document.getElementById('email').value='';
+    document.getElementById('password').value='';
   }
 
 
