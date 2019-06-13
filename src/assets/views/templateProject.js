@@ -19,7 +19,8 @@ export const templateProject = () => {
 // btn posting
 document.getElementById('posting').addEventListener('click', () => {
   let textPost = document.getElementById('post').value;
-createPost( textPost)
+  let uid = firebase.auth().currentUser;
+createPost(uid, textPost)
 })
 
   // btn sign out
