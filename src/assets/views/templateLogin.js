@@ -9,6 +9,7 @@ import { googleAuth } from '../js/firebaseAuth.js';
 
 //export const printError = document.getElementById('error-message');
 export const templateLogin = () => {
+  
   document.getElementById('root').innerHTML = `
   <div class="first-screen">
   <div class="container-login">
@@ -56,7 +57,7 @@ document.getElementById('password2').value='';
 
 } 
  else {
-  login(mailValue, passValue)
+  login(mailValue, passValue);
 
   }
 });

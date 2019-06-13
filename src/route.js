@@ -1,10 +1,9 @@
 //import todas las vistas
 
 import { templateRegister } from './assets/views/templateRegister.js';
-import { templateProject } from './assets/views/templateProject.js';
 import { templateLogin } from './assets/views/templateLogin.js';
 import { templateForgotPassword } from './assets/views/templateForgotPassword.js';
-
+import { templateProject } from './assets/views/templateProject.js';
 
 
 export const changeRoute = (hash) => {

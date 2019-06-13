@@ -54,6 +54,7 @@ if (validateRegister(nameValue, emailValue, passwordValue)) {
 }
 else {
   register(nameValue,emailValue, passwordValue,uidValue);
+  document.getElementById('error-message').innerHTML="Verifica tu correo";
   // templateLogin();
   // window.location.hash = '#/login';
 }
