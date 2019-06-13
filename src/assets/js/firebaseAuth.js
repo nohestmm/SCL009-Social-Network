@@ -1,8 +1,11 @@
 import { templateLogin, userInvalid, emailVerify } from "../views/templateLogin.js";
+import { templateProject } from "../views/templateProject.js";
+
+
 //export let name, email;
 
 // Guardar usuarios registrados en firestore
-const saveUsers = (name, email,uid) => {
+export const saveUsers = (name, email,uid) => {
   let db = firebase.firestore();
   db.collection("users").add({
     uid: uid,
@@ -49,18 +52,19 @@ export const register = (name, email, password) => {
 export const login = (mail, pass) => {
   firebase.auth().signInWithEmailAndPassword(mail, pass)
     .then(() => {
-      observer()
+     observer();
       let user = firebase.auth().currentUser;
 
       if (user.emailVerified) {
-        //console.log(user.emailVerified)
-        //templateProject();
-        window.location.hash = '#/project';
+      console.log(user.emailVerified)
+      //templateProject();
+      window.location.hash = '#/project';
+        
       }
       else {
-        signOut()
-        //window.location.hash = '#/login';
-        //emailVerify(user.emailVerified)
+      signOut()
+      window.location.hash = '#/login';
+      emailVerify(user.emailVerified);
       }
     })
     .catch(error => {
@@ -173,6 +177,7 @@ export const observer = () => {
 export const signOut = () => {
   firebase.auth().signOut()
   .then(() => {
+  
     templateLogin();
     //document.getElementById("error-message").innerHTML= "Vuelve pronto ÑAÑAÑA";
     window.location.hash = '#/login';

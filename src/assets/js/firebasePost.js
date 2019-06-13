@@ -1,28 +1,4 @@
-//import { templateProject } from "../views/templateProject.js";
-
-//Read usersData
-
-// export const createPost = (uid, msj) => {
-//     let db = firebase.firestore();
-//     let user = firebase.auth().currentUser;
-//       let marico = user.uid;
-//      // let data = [] pk onSnapshot pide 4 argumentos. -.-
-//      db.collection("users").doc(marico).onSnapshot((querySnapshot) => {
-//         querySnapshot.forEach((doc) => {
-//             db.collection("post").add({
-//                // data,
-//                // id,
-//                 uid,
-//                 msj: msj
-//             })
-//             console.log(`${doc.id} => ${doc.data()}`);
-//         });
-//     });
-// }
-
-
-
-
+export let nameUser = '';
 export const createPost = () =>{ //funciona pero se duplican los post por user
     let db = firebase.firestore();
     let user = firebase.auth().currentUser;
@@ -47,17 +23,36 @@ export const createPost = () =>{ //funciona pero se duplican los post por user
     //});
 }
 
-// export const showPost = () => {
-//     let db = firebase.firestore();
-//     db.collection("users").get().then((querySnapshot) => {
-//         let posts = db.collection("post")
-//         console.log(posts)
-//         posts.orderBy("name", "desc").limit(2);
-//         querySnapshot.forEach((doc) => {
-//             doc.data().post
-// //templateProject()
-// //window.location.hash = '#/project';
-//             //console.log(`${doc.id} => ${doc.data()}`);
-//         });
-//     });
-// }
+//leer el alias
+export const readNameDB = () => {
+   
+
+let db = firebase.firestore();
+let user = firebase.auth().currentUser;
+
+
+db.collection("users").where ("uid", "==" ,user.uid)
+.get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data().name);
+return nameUser = doc.data().name;
+
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+
+
+
+}
+
+  
+
+
+
+
+

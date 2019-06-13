@@ -25,6 +25,7 @@ export const firebaseInit = () => {
 const init = () => {
  
   firebaseInit();
+  
   //observer();
   initRouter();
   
