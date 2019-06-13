@@ -1,10 +1,32 @@
-import { observer } from '../js/firebaseAuth.js';
+export let nameUser = '';
+export const createPost = () =>{ //funciona pero se duplican los post por user
+    let db = firebase.firestore();
+    let user = firebase.auth().currentUser;
+    let userSignIn = user.uid;
+    let msj = document.getElementById("post").value;
+    //let data = []
+    //not working with currentUser... trying with frog observer!
+    //firebase.auth().onAuthStateChanged(user=> {
+        db.collection("users").doc(userSignIn).get().then(doc=> {
+            db.collection("post").add({
+                //name: doc.data().name,
+               userSignIn,
+              msj
+            
+            }).then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            console.log(`${doc.id} => ${doc.data()}`);
+            //showPost()
+        });
+       
+    //});
+}
 
-export let nameUser = ''; 
 //leer el alias
 export const readNameDB = () => {
    
-observer();
+
 let db = firebase.firestore();
 let user = firebase.auth().currentUser;
 
@@ -34,19 +56,3 @@ return nameUser = doc.data().name;
 
 
 
-//Read usersData
-
-// export const createPost = (uid, msj) => {
-//     let db = firebase.firestore();
-//     let user = firebase.auth().currentUser;
-     
-//     db.collection("users").doc(user.uid).onSnapshot().then((querySnapshot) => {
-//         querySnapshot.forEach((doc) => {
-//             db.collection("post").add({
-//                 uid,
-//                 msj: msj
-//             })
-//             console.log(`${doc.uid} => ${doc.data()}`);
-//         });
-//     });
-// }

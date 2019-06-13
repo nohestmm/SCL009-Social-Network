@@ -28,10 +28,14 @@ readNameDB();
 
    
 // btn posting
-// document.getElementById('posting').addEventListener('click', () => {
-//   let textPost = document.getElementById('post').value;
-// createPost(user.uid, textPost);
-// })
+
+document.getElementById('posting').addEventListener('click', () => {
+  let textPost = document.getElementById('post').value;
+  let uid = firebase.auth().currentUser;
+createPost(uid, textPost)
+//showPost();
+})
+
 
   // btn sign out
 document.getElementById('sign-out').addEventListener('click', () => {
