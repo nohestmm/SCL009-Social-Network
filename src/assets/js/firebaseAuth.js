@@ -2,13 +2,13 @@ import { templateLogin, userInvalid, emailVerify } from "../views/templateLogin.
 //export let name, email;
 
 // Guardar usuarios registrados en firestore
-const saveUsers = (name, email, password, uid) => {
+const saveUsers = (name, email,uid) => {
   let db = firebase.firestore();
   db.collection("users").add({
     uid: uid,
     name: name,
-    email: email,
-    password: password
+    email: email
+   
 
   })
     .then(function (docRef) {
@@ -31,7 +31,7 @@ export const register = (name, email, password) => {
       //console.log(uid);
       verifyAccount();
       observer();
-      saveUsers(name, email, password, uid);
+      saveUsers(name, email,uid);
      
       window.location.hash = '#/login';
 
@@ -119,7 +119,13 @@ export const googleAuth = () => {
     // The signed-in user info.
     let user = result.user;
     console.log(user);
+let name = user.displayName;
+console.log(name);
+let email = user.email;
+console.log(email);
+let uid = user.uid;
 
+saveUsers(name, email, uid);
     window.location.hash = '#/project';
     // ...
   }).catch(error => {
