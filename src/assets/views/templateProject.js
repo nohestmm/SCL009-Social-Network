@@ -1,7 +1,7 @@
 import { templateLogin } from './templateLogin.js';
 import { observer } from '../js/firebaseAuth.js';
 import { signOut } from '../js/firebaseAuth.js';
-import { createPost, showPost } from '../js/firebasePost.js';
+import { createPost } from '../js/firebasePost.js';
 
 export const templateProject = () => {
   observer();
@@ -21,7 +21,7 @@ document.getElementById('posting').addEventListener('click', () => {
   let textPost = document.getElementById('post').value;
   let uid = firebase.auth().currentUser;
 createPost(uid, textPost)
-showPost();
+//showPost();
 })
 
   // btn sign out
