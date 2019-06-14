@@ -1,6 +1,11 @@
-export let nameUser = '';
+import { templateProject } from '../views/templateProject.js';
+import { showUserNameInProject } from '../views/templateProject.js';
+let nameUser = '';
+
+
 export const createPost = () =>{ //funciona pero se duplican los post por user
-    let db = firebase.firestore();
+    
+      let db = firebase.firestore();
     let user = firebase.auth().currentUser;
     let userSignIn = user.uid;
     let msj = document.getElementById("post").value;
@@ -19,38 +24,42 @@ export const createPost = () =>{ //funciona pero se duplican los post por user
             console.log(`${doc.id} => ${doc.data()}`);
             //showPost()
         });
-       
-    //});
-}
-
-//leer el alias
-export const readNameDB = () => {
+     
    
+}
+ 
+//leer el alias
 
+
+export const readNameDB = () => {
 let db = firebase.firestore();
 let user = firebase.auth().currentUser;
 
-
+if (user != null){
 db.collection("users").where ("uid", "==" ,user.uid)
 .get()
     .then(querySnapshot => {
         querySnapshot.forEach(doc => {
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " => ", doc.data().name);
-return nameUser = doc.data().name;
+nameUser = doc.data().name;
 
+
+showUserNameInProject(nameUser);
         });
+
+
     })
     .catch(error =>{
         console.log("Error getting documents: ", error);
     });
 
 
-
+}
 
 }
 
-  
+
 
 
 

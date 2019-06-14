@@ -3,7 +3,7 @@ import { templateForgotPassword } from './templateForgotPassword.js'; //registro
 import { validateLogin } from '../js/validate/validateLogin.js'; // const validate
 import { login } from '../js/firebaseAuth.js';
 import { googleAuth } from '../js/firebaseAuth.js';
-
+;
 
 
 
