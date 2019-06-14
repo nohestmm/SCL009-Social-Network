@@ -18,6 +18,7 @@ export const templateProject = () => {
    
 
   
+
   document.getElementById('root').innerHTML = `<p>Template Project</p>
   
   <p id="welcome"></p>
@@ -27,6 +28,20 @@ export const templateProject = () => {
   <button id="posting">Publicar</button>
                                               <button id="sign-out">Cerrar sesión</button>
                                               <a id="btn-sos">¿Necesitas ayuda?, pincha aquí</a>
+
+  document.getElementById('root').innerHTML = ` 
+  <div class="first-screen"> 
+   <div class="class="container-login">
+   <div class="header-login">
+   <img class = "icon-user" src="./assets/img/woma-user.png">
+  <p id="welcome"></p></div>
+  <div class="content-login">
+    <button class ="btn-sign-out" id="sign-out">Cerrar sesión</button>  
+  <textarea name="post" id="post" cols="30" rows="10" ></textarea>
+  <button class ="btn-posting" id="posting">Publicar</button>
+  </div>
+  </div>
+  </div>
                                               `
                             
 
@@ -60,4 +75,3 @@ window.location.hash = '#/login';
 
 
 }
-
