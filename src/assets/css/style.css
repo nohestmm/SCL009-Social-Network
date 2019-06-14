@@ -99,8 +99,11 @@ footer {
 /* estilo de plantilla sos */
 .container-SOS{
     /* background: rgb(241, 177, 210); */
+    
+    margin-left: .6em;
     font-size: 25px;
     border-radius:6px;
+    font-family: 'El Messiri';
 }
  #number{  
       margin-left: 3px;

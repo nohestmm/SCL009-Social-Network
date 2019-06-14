@@ -2,7 +2,7 @@ import { observer } from '../js/firebaseAuth.js';
 import { createPost, readNameDB } from '../js/firebasePost.js';
 import { templateLogin } from './templateLogin.js';
 import { signOut } from '../js/firebaseAuth.js';
- 
+import { templateSOS } from './templateSOS.js';
 
 export const showUserNameInProject = (nameUser) => {
 
@@ -26,6 +26,7 @@ export const templateProject = () => {
   <textarea name="post" id="post" cols="30" rows="10"></textarea>
   <button id="posting">Publicar</button>
                                               <button id="sign-out">Cerrar sesión</button>
+                                              <a id="btn-sos">¿Necesitas ayuda?, pincha aquí</a>
                                               `
                             
 
@@ -48,6 +49,13 @@ signOut();
 templateLogin();
 window.location.hash = '#/login';
   });
+//llamado del sos
+  document.getElementById('btn-sos').addEventListener('click', () => {
+
+    
+    templateSOS();
+    window.location.hash = '#/sos';
+      });
 
 
 

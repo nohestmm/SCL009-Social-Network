@@ -1,6 +1,6 @@
 import { templateProject } from './templateProject.js';
 
-export const templateEmpty= () => {
+export const templateSOS= () => {
     document.getElementById('root').innerHTML = `
     <div class="container-SOS">
     <p><i class="fas fa-user-shield"></i>Números de emergencia </p>
