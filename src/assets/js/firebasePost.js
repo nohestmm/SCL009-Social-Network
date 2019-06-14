@@ -11,11 +11,11 @@ export const createPost = () =>{ //funciona pero se duplican los post por user
             db.collection("post").add({
                 //name: doc.data().name,
                userSignIn,
-              msj
+               msj
             
-            }).then(function(docRef) {
+            }).then(docRef => {
                 console.log("Document written with ID: ", docRef.id);
-            })
+            });
             console.log(`${doc.id} => ${doc.data()}`);
             //showPost()
         });
@@ -33,15 +33,15 @@ let user = firebase.auth().currentUser;
 
 db.collection("users").where ("uid", "==" ,user.uid)
 .get()
-    .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
+    .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " => ", doc.data().name);
 return nameUser = doc.data().name;
 
         });
     })
-    .catch(function(error) {
+    .catch(error =>{
         console.log("Error getting documents: ", error);
     });
 

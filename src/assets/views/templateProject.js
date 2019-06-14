@@ -2,8 +2,9 @@ import { readNameDB } from '../js/firebasePost.js';
 import { nameUser } from '../js/firebasePost.js';
 import { observer } from '../js/firebaseAuth.js';
 import { signOut } from '../js/firebaseAuth.js';
-//import { createPost } from '../js/firebasePost.js';
+import { createPost } from '../js/firebasePost.js';
 import { templateLogin } from './templateLogin.js';
+
  
 
 
