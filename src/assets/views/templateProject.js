@@ -19,17 +19,7 @@ export const templateProject = () => {
 
   
 
-  document.getElementById('root').innerHTML = `<p>Template Project</p>
-  
-  <p id="welcome"></p>
-                                              
-  
-  <textarea name="post" id="post" cols="30" rows="10"></textarea>
-  <button id="posting">Publicar</button>
-                                              <button id="sign-out">Cerrar sesión</button>
-                                              <a id="btn-sos">¿Necesitas ayuda?, pincha aquí</a>
-
-  document.getElementById('root').innerHTML = ` 
+  document.getElementById('root').innerHTML = `
   <div class="first-screen"> 
    <div class="class="container-login">
    <div class="header-login">
@@ -39,6 +29,7 @@ export const templateProject = () => {
     <button class ="btn-sign-out" id="sign-out">Cerrar sesión</button>  
   <textarea name="post" id="post" cols="30" rows="10" ></textarea>
   <button class ="btn-posting" id="posting">Publicar</button>
+  <a id="btn-sos">¿Necesitas ayuda?, pincha aquí</a>
   </div>
   </div>
   </div>
