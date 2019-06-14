@@ -96,3 +96,22 @@ footer {
     width: 100%;
     height: 50px;
 }
+/* estilo de plantilla sos */
+.container-SOS{
+    /* background: rgb(241, 177, 210); */
+    font-size: 25px;
+    border-radius:6px;
+}
+ #number{  
+      margin-left: 3px;
+      color: #B52C72;
+      font-weight: bold;
+} 
+#number2{  
+ margin-left: 1em;
+ color: #B52C72;
+ font-weight: bold;
+} 
+.container-SOS a{
+    color:#B52C72;
+}
