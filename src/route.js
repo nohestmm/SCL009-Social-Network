@@ -11,7 +11,7 @@ export const changeRoute = (hash) => {
   if (hash === '#/register' || hash === '#/project' || hash === '#/login' || hash === '#/forgotpassword'||hash === '#/sos' || hash === '' || hash === '#/' || hash === '/#') {
     return showTemplate(hash)
   }
-  return showTemplate(hash)
+  return showTemplate(hash);
 }
 
 // segunda función showTemplate(hash)

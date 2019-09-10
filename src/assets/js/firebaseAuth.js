@@ -1,11 +1,10 @@
 import { templateLogin, userInvalid, emailVerify } from "../views/templateLogin.js";
-import { templateProject } from "../views/templateProject.js";
-import { readNameDB } from '../js/firebasePost.js';
+
 export let nameUser = '';
 ;
 //export let name, email;
 
-// Guardar usuarios registrados en firestore
+// Guardar usuarios registrados en firestore en otro archivo
 export const saveUsers = (name, email,uid) => {
   let db = firebase.firestore();
   db.collection("users").add({
@@ -58,35 +57,7 @@ export const login = (mail, pass) => {
 
       if (user.emailVerified) {
 
-//   let db = firebase.firestore();
-// let user = firebase.auth().currentUser;
-
-// if (user != null){
-// db.collection("users").where ("uid", "==" ,user.uid)
-// .get()
-//     .then(querySnapshot => {
-//         querySnapshot.forEach(doc => {
-//             // doc.data() is never undefined for query doc snapshots
-//             console.log(doc.id, " => ", doc.data().name);
-// nameUser = doc.data().name;
-
-
-// //showUserNameInProject(nameUser);
-//         });
-
-
-//     })
-//     .catch(error =>{
-//         console.log("Error getting documents: ", error);
-//     });
-
-      
-      
-        
-//       }
-    
-
-    window.location.hash = '#/project';
+       window.location.hash = '#/project';
       
       
       console.log(user.emailVerified)
@@ -94,7 +65,7 @@ export const login = (mail, pass) => {
     }
 
       else {
-      signOut()
+      signOut();
       window.location.hash = '#/login';
       emailVerify(user.emailVerified);
       }
@@ -198,12 +169,9 @@ export const observer = (callback) => {
     else {
      
   window.location.hash = "#/project";
-  
-  
-      //emailVerify(emailVerified)
+       //emailVerify(emailVerified)
      
-      
-    }
+      }
   });
 }
 

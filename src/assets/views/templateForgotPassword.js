@@ -8,7 +8,7 @@ import { validateMail } from '../js/validate/validateRegister.js'; // const vali
 
 export const templateForgotPassword= () => {
 
-  
+  //mejorar los bloques
     document.getElementById('root').innerHTML = `
     <div class="first-screen">
     <div class="container-login"> 

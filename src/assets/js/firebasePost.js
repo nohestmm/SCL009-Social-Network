@@ -5,7 +5,7 @@ let nameUser = '';
 
 export const createPost = () =>{ //funciona pero se duplican los post por user
     
-      let db = firebase.firestore();
+    let db = firebase.firestore();
     let user = firebase.auth().currentUser;
     let userSignIn = user.uid;
     let msj = document.getElementById("post").value;
